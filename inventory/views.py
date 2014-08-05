@@ -7,13 +7,16 @@ from django.contrib.auth.decorators import login_required
 from inventory.models import Category, SubCategory, InvItem
 # Create your views here.
 
-def root(reqquest):
+
+def root(request):
     return HttpResponse("Inventory Page")
+
 
 def category_page(request):
     context = RequestContext(request)
     context_dict = {}
-    return render_to_response('siteroot/category.html', context_dict, context)
+    return render_to_response('inventory/category.html', context_dict, context)
+
 
 def sub_category_page(request, category=None):
     context = RequestContext(request)
@@ -22,4 +25,3 @@ def sub_category_page(request, category=None):
         return HttpResponseRedirect(reverse('siteroot.category_page'))
     else:
         return HttpResponse("You are looking at sub_categories")
-

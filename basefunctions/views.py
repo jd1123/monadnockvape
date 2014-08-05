@@ -10,3 +10,4 @@ from django.contrib.auth.decorators import login_required
 def root(request):
     context = RequestContext(request)
     return HttpResponse("Hello World!")
+

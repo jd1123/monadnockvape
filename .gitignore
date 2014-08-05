@@ -1,0 +1,6 @@
+db.sqlite3
+static/img/*
+settings.py
+.ropeproject
+*.swp
+*.pyc

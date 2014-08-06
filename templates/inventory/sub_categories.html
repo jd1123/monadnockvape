@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+SubCategory
+{% endblock %}
+
+{% block body_block %}
+	{% for s in subs %}
+		{{ s.sub_category_name }} <br />
+	{% empty %}
+		No Such Category!
+	{% endfor %}
+{% endblock %}

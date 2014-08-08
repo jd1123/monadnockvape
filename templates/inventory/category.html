@@ -3,5 +3,7 @@
 {% block title %} Categories {% endblock %}
 
 {% block body_block %}
-	HELLO!
+	{% for c in categories %}
+		{{ c.category_name }} <br />
+	{% endfor %}
 {% endblock %}

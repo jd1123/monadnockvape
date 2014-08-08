@@ -16,6 +16,8 @@ def root(request):
 def category_list(request):
     context = RequestContext(request)
     context_dict = {}
+    c = Category.objects.all()
+    context_dict['categories'] = c
     return render_to_response('inventory/category.html', context_dict, context)
 
 
@@ -27,7 +29,9 @@ def sub_category_list(request, category=None):
     else:
         c = Category.objects.filter(category_name=decode_category(category))
         subs = SubCategory.objects.filter(category = c)
+        print "Category : " + category
         if len(c) is 0:
+            print "You are in the subcat list view"
             raise Http404
             #return HttpResponse("404 Not Found!")
 
@@ -40,11 +44,18 @@ def inv_item_list(request, category=None, sub_category = None):
     context_dict = {}
     print "Category: " + category
     print "Sub: " + sub_category
+
+
     if sub_category is None:
         return HttpResponseRedirect(reverse('inventory.sub_category_list'))
     else:
-        s=SubCategory.objects.filter(sub_category_name = decode_category(sub_category))
-        return HttpResponse("You got it")
+        c=Category.objects.filter(category_name=decode_category(category))
+        s=SubCategory.objects.filter(sub_category_name=decode_category(sub_category))
+        items=InvItem.objects.filter(category=c, sub_category=s)
+        if len(items) is 0:
+            raise Http404
+        else:
+            return render_to_response('inventory/inventory_items.html', context_dict, context)
 
 
 def encode_category(category):

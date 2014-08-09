@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+	{{ category }} - {{ sub_category }}
+{% endblock %}
+
+{% block body_block %}
+	{% if items %}
+	{% else %}
+		Sorry there are no items in {{ category }} / {{ sub_category }}
+	{% endif %}
+{%endblock%}

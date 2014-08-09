@@ -4,6 +4,6 @@
 
 {% block body_block %}
 	{% for c in categories %}
-		{{ c.category_name }} <br />
+		<a href="{% url 'inventory.views.sub_category_list' c.category_name %}">{{ c.category_name }}</a> <br />
 	{% endfor %}
 {% endblock %}

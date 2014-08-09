@@ -40,8 +40,8 @@ a {
 
 body {
 	background: #eff3f5;
-	color: #fff;
-	font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	color: #22272f;
+	font-family: "Oswald", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-size: 24px;
 	font-weight: 400;
 }
@@ -49,11 +49,11 @@ body {
 header {
 	background: #323a46; /* Darkest */
 	background: #4B5564;
-	font-family: 'Oswald';
+	color: #fff;
 	font-weight: 400;
 }
 
-header, footer {
+header, footer, section {
 	text-align: center;
 }
 
@@ -87,11 +87,45 @@ header nav ul li:nth-child(3) {
 	margin-right: 0;
 }
 
-section {}
+.splash {
+	font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+.splash h1 {
+	margin-bottom: 24px;
+	font-size: 32px;
+	letter-spacing: -1px;
+	font-weight: 400;
+}
+
+.splash2{
+	font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+.splash2 h2 {
+	margin-bottom: 24px;
+	font-size: 28px;
+	letter-spacing: -1px;
+	font-weight: 400;
+}
+
+.products-splash li {
+	width: 50%;
+	float: left;
+}
+
+.col {
+	float: left;
+	width: 50%;
+}
 
 footer {
 	background: #323a46;
 	color: #ccc;
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 400;
+}
+
+footer p {
+	line-height: .750rem;
 }

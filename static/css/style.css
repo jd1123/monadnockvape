@@ -1,0 +1,97 @@
+/* pallete: http://www.paletton.com/#uid=13F0u0ka2dk6Gop8Sj7fBa4lp8H */
+
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font-size: 24px;
+	line-height: 24px;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.cf { zoom: 1; }
+.cf:before,
+.cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
+
+h1, h2, h3, h4, h5, h6, p, ul, li, figure {
+	margin: 0; 
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background: #eff3f5;
+	color: #fff;
+	font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+header {
+	background: #323a46; /* Darkest */
+	background: #4B5564;
+	font-family: 'Oswald';
+	font-weight: 400;
+}
+
+header, footer {
+	text-align: center;
+}
+
+.inner {
+	margin: 0 6%;
+	padding: 24px;
+}
+
+header p {
+	color: #ccc;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+header nav {
+	margin-top: 14px;
+}
+
+header nav ul li {
+	display: inline;
+	margin-right: 36px;
+}
+
+header nav ul li a {
+	color: #fff;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+header nav ul li:nth-child(3) {
+	margin-right: 0;
+}
+
+section {}
+
+footer {
+	background: #323a46;
+	color: #ccc;
+	font-size: 14px;
+	font-weight: 400;
+}

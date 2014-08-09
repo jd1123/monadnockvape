@@ -3,7 +3,7 @@
 {% block title %} Categories {% endblock %}
 
 {% block body_block %}
-	{% for c in categories %}
-		<a href="{% url 'inventory.views.sub_category_list' c.category_name %}">{{ c.category_name }}</a> <br />
+	{% for a in args %}
+		<a href="{% url 'inventory.views.sub_category_list' a.1 %}">{{ a.0.category_name }}</a> <br />
 	{% endfor %}
 {% endblock %}

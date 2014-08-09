@@ -18,7 +18,9 @@ def category_list(request):
     context = RequestContext(request)
     context_dict = {}
     c = Category.objects.all()
+    args = [(cat, encode_category(cat.category_name)) for cat in c]
     context_dict['categories'] = c
+    context_dict['args'] = args
     return render_to_response('inventory/category.html', context_dict, context)
 
 

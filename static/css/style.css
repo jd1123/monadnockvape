@@ -10,10 +10,12 @@ html {
 	height: 100%;
 	font-size: 24px;
 	line-height: 24px;
+	/*
 	-moz-hyphens: auto;
 	-webkit-hyphens: auto;
 	-ms-hyphens: auto;
 	hyphens: auto;
+	*/
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -60,6 +62,7 @@ header, footer, section {
 .inner {
 	margin: 0 6%;
 	padding: 24px;
+	max-width: 980px;
 }
 
 header p {
@@ -88,35 +91,86 @@ header nav ul li:nth-child(3) {
 }
 
 .splash {
-	font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
 
 .splash h1 {
-	margin-bottom: 24px;
-	font-size: 32px;
-	letter-spacing: -1px;
-	font-weight: 400;
-}
-
-.splash2{
-	font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-}
-
-.splash2 h2 {
-	margin-bottom: 24px;
+	margin-bottom: 12px;
 	font-size: 28px;
 	letter-spacing: -1px;
 	font-weight: 400;
 }
 
-.products-splash li {
-	width: 50%;
-	float: left;
+.splash figure {
+	border: 2px solid #4B5564;
+	margin-bottom: 12px;
+	padding: 2px;
+}
+
+.splash img {
+	width: 100%;
+	vertical-align: middle;
+}
+
+.splash p {
+	font-size: 16px;
+	line-height:18px;
+}
+
+.splash2 .inner {
+	padding-top: 0;
+}
+
+.splash2{
+	font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+.splash2 h2 {
+	margin-bottom: 12px;
+	font-size: 28px;
+	letter-spacing: -1px;
+	font-weight: 400;
+}
+
+.splash2 p {
+	font-size: 16px;
+	line-height:18px;
+	margin-bottom: 12px;
+}
+
+.splash2 p a {
+	border: none;
+	display: inline;
+	padding: 0;
+	text-transform: none;
+	color: #00b37e;
+	font-weight: 700;
+}
+
+.splash2 figure {
+	border: 2px solid #4B5564;
+	padding: 2px;
+	margin-bottom: 8px;
+}
+
+.splash2 img {
+	width: 100%;
+	vertical-align: middle;
+}
+
+.splash2 a {
+	border: 2px solid #4B5564;
+	color: #22272f;
+	display: block;
+	font-size: 16px;
+	line-height:18px;
+	padding: 12px;
+	text-transform: uppercase;
 }
 
 .col {
-	float: left;
-	width: 50%;
+	width: 100%;
+	margin-bottom: 12px;
 }
 
 footer {
@@ -128,4 +182,13 @@ footer {
 
 footer p {
 	line-height: .750rem;
+}
+
+
+@media only screen and (min-width : 980px) {
+	
+	.inner {
+		margin: 0 auto;
+	}
+	
 }

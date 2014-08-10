@@ -1,9 +1,9 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth import authenticate, login, logout
+# from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 def root(request):
     context = RequestContext(request)
     context_dict = {}
+    print 'Incoming request from: ' + request.META['REMOTE_ADDR']
     return render_to_response('index.html', context_dict, context)
 
 

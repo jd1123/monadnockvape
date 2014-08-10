@@ -5,8 +5,8 @@ SubCategory
 {% endblock %}
 
 {% block body_block %}
-	{% for s in subs %}
-		<a href="{% url 'inventory.views.inv_item_list' category s.sub_category_name %}">{{ s.sub_category_name }}</a> <br />
+	{% for s in args %}
+		<a href="{% url 'inventory.views.inv_item_list' category.1 s.1 %}">{{ s.0.sub_category_name }}</a> <br />
 	{% empty %}
 		No Such Category!
 	{% endfor %}

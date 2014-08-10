@@ -37,7 +37,9 @@ def sub_category_list(request, category=None):
             raise Http404
 
         context_dict['subs'] = subs
-        context_dict['category'] = c[0].category_name
+        context_dict['category'] = (c[0].category_name, encode_category(c[0].category_name))
+        args = [(s, encode_category(s.sub_category_name)) for s in subs]
+        context_dict['args'] = args
         return render_to_response('inventory/sub_categories.html', context_dict, context)
 
 

@@ -19,15 +19,15 @@ class SubCategory(models.Model):
 
 class InvItem(models.Model):
     category = models.ForeignKey(Category)
-    sub_category = models.ForeignKey(SubCategory)
+    sub_category = models.ForeignKey(SubCategory, blank=True)
     item_name = models.TextField(max_length = 200)
-    description = models.TextField(max_length = 1000)
-    date_added = models.DateField()
-    price = models.FloatField()
-    # sku = models.TextField(max_length=8)
+    description = models.TextField(max_length = 1000, blank=True)
+    date_added = models.DateField(blank=True)
+    price = models.FloatField(blank=True)
+    sku = models.TextField(max_length=8, blank=True)
     # which to use???
-    picture_url = models.URLField()
-    img = models.ImageField(upload_to = 'static/img')
+    picture_url = models.URLField(blank=True)
+    # img = models.ImageField(upload_to = 'static/img')
 
     def __unicode__(self):
         return self.item_name
@@ -41,5 +41,5 @@ class SubCategoryAdmin(admin.ModelAdmin):
     search_fields = ['category', 'sub_category_name']
 
 class InvItemAdmin(admin.ModelAdmin):
-    list_display = ['category', 'sub_category', 'item_name', 'date_added', 'price', 'img']
+    list_display = ['category', 'sub_category', 'item_name', 'date_added', 'price', 'sku']
     search_fields = ['category', 'sub_category', 'item_name', 'date_added', 'price']

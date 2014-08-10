@@ -24,6 +24,7 @@ class InvItem(models.Model):
     description = models.TextField(max_length = 1000)
     date_added = models.DateField()
     price = models.FloatField()
+    # sku = models.TextField(max_length=8)
     # which to use???
     picture_url = models.URLField()
     img = models.ImageField(upload_to = 'static/img')

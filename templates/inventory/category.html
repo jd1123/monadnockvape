@@ -3,7 +3,25 @@
 {% block title %} Categories {% endblock %}
 
 {% block body_block %}
-	{% for a in args %}
-		<a href="{% url 'inventory.views.sub_category_list' a.1 %}">{{ a.0.category_name }}</a> <br />
-	{% endfor %}
+		<section class="categories">
+			<div class="inner">
+				<h1>Inventory</h1>
+
+				<p><a href="{% url 'basefunctions.views.root' %}">Home</a> ::
+				<a href="{% url 'inventory.views.category_list' %}">All Categories</a></p>
+
+				<p>Choose a Category below:</p>
+				<ul class="cf">
+					{% for a in args %}
+					<li>
+						<figure>
+							<a href="{% url 'inventory.views.sub_category_list' a.1 %}"><img src="http://dummyimage.com/250x250/ddd4e4/fff"></a>
+						</figure>
+						<div class="title">{{ a.0.category_name }}</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</section>
+
 {% endblock %}

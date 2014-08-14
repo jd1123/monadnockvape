@@ -5,9 +5,28 @@ SubCategory
 {% endblock %}
 
 {% block body_block %}
-	{% for s in args %}
-		<a href="{% url 'inventory.views.inv_item_list' category.1 s.1 %}">{{ s.0.sub_category_name }}</a> <br />
-	{% empty %}
-		No Such Category!
-	{% endfor %}
+		<section class="categories">
+			<div class="inner">
+				<h1>Inventory</h1>
+
+				<p><a href="{% url 'basefunctions.views.root' %}">Home</a> ::
+				<a href="{% url 'inventory.views.category_list' %}">All Categories</a> :: 
+				<a href="{% url 'inventory.views.sub_category_list' category.1 %}">{{ category.0 }}</a></p>
+			
+				<p>Choose a Sub-Category below:</p>
+				<ul class="cf">
+					{% for s in args %}
+					<li>
+						<figure>
+							<a href="{% url 'inventory.views.inv_item_list' category.1 s.1 %}"><img src="http://dummyimage.com/250x250/ddd4e4/fff"></a>
+						</figure>
+						<div class="title">{{ s.0.sub_category_name }}</div>
+					</li>
+					{% empty %}
+					No such category!
+					{% endfor %}
+
+				</ul>
+			</div>
+		</section>
 {% endblock %}

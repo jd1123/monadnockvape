@@ -37,21 +37,16 @@ ul, li {
 }
 
 a {
+	color: #00b37e;
+	font-weight: 700;
 	text-decoration: none;
 }
 
 body {
 	background: #eff3f5;
 	color: #22272f;
-	font-family: "Oswald", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-size: 24px;
-	font-weight: 400;
-}
-
-header {
-	background: #323a46; /* Darkest */
-	background: #4B5564;
-	color: #fff;
 	font-weight: 400;
 }
 
@@ -59,10 +54,23 @@ header, footer, section {
 	text-align: center;
 }
 
+img {
+	width: 100%;
+	vertical-align: middle;
+}
+
 .inner {
 	margin: 0 6%;
 	padding: 24px;
-	max-width: 980px;
+}
+
+header {
+	background: #4B5564;
+	font-family: "Oswald", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+header a {
+	color: #eff3f5;
 }
 
 header p {
@@ -72,7 +80,7 @@ header p {
 }
 
 header nav {
-	margin-top: 14px;
+	margin-top: 12px;
 }
 
 header nav ul li {
@@ -81,7 +89,6 @@ header nav ul li {
 }
 
 header nav ul li a {
-	color: #fff;
 	font-size: 18px;
 	font-weight: 300;
 }
@@ -90,105 +97,168 @@ header nav ul li:nth-child(3) {
 	margin-right: 0;
 }
 
-.splash {
-	font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-}
-
-.splash h1 {
+h1 {
 	margin-bottom: 12px;
-	font-size: 28px;
+	font-size: 24px;
 	letter-spacing: -1px;
 	font-weight: 400;
 }
 
-.splash figure {
+figure {
+	background: #fff;
 	border: 2px solid #4B5564;
 	margin-bottom: 12px;
 	padding: 2px;
 }
 
-.splash img {
-	width: 100%;
-	vertical-align: middle;
-}
-
-.splash p {
+p {
 	font-size: 16px;
 	line-height:18px;
+	margin-bottom: 12px;
 }
 
-.splash2 .inner {
+.no-margin-bottom {
+	margin-bottom: 0;
+}
+
+.home-bot .inner {
 	padding-top: 0;
+	padding-left: 12px;
 }
 
-.splash2{
-	font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-}
-
-.splash2 h2 {
-	margin-bottom: 12px;
-	font-size: 28px;
-	letter-spacing: -1px;
-	font-weight: 400;
-}
-
-.splash2 p {
-	font-size: 16px;
-	line-height:18px;
-	margin-bottom: 12px;
-}
-
-.splash2 p a {
-	border: none;
-	display: inline;
-	padding: 0;
-	text-transform: none;
-	color: #00b37e;
-	font-weight: 700;
-}
-
-.splash2 figure {
-	border: 2px solid #4B5564;
-	padding: 2px;
-	margin-bottom: 8px;
-}
-
-.splash2 img {
-	width: 100%;
-	vertical-align: middle;
-}
-
-.splash2 a {
+span {
 	border: 2px solid #4B5564;
 	color: #22272f;
 	display: block;
-	font-size: 16px;
+	font-weight: 400;
+	font-size: 13px;
 	line-height:18px;
-	padding: 12px;
+	margin-bottom: 12px;
+	padding: 12px 4px;
 	text-transform: uppercase;
 }
 
 .col {
+	padding-left: 12px;
+}
+
+.contact .inner {
+	padding-bottom: 12px;
+}
+
+.contact ul {
+	font-size: 16px;
+	line-height:18px;
+}
+
+.map {
+	background: #fff;
+	border: 2px solid #4B5564;
+	margin: 0 auto;
+	padding: 2px;
+	overflow:hidden;
+	height:254px;
 	width: 100%;
 	margin-bottom: 12px;
+}
+
+#gmap_canvas {
+	height:246px;
+	width: auto;
+	vertical-align: middle;
+}
+
+.categories .inner {
+	padding-left: 12px;
+}
+
+.categories .inner ul li {
+	padding-left: 12px;
+}
+
+.categories figure, .inventory figure {
+	margin-bottom: 0;
+	border-bottom: none;
+}
+
+.categories .title {
+	background: #fff;
+	border: 2px solid #4B5564;
+	border-top: none;
+	font-size: 16px;
+	margin-bottom: 12px;
+}
+
+.inventory .inner {
+	padding-left: 12px;
+	padding-bottom: 12px;
+}
+
+.inventory .inner ul li {
+	padding-left: 12px;
+	margin-bottom: 12px;
+}
+
+.details {
+	background: #fff;
+	border: 2px solid #4B5564;
+	border-top: none;
+	padding: 2px 4px 4px 4px;
+}
+
+.inventory p {
+	margin-bottom: 0;
+	font-size: 13px;
+	line-height: 13px;
+}
+
+.inventory span {
+	margin-left: 12px;
 }
 
 footer {
 	background: #323a46;
 	color: #ccc;
+	font-family: "Oswald", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+footer p {
+	margin-bottom: 0;
 	font-size: 13px;
 	font-weight: 400;
 }
 
-footer p {
-	line-height: .750rem;
+@media only screen and (min-width : 548px) {
+	
+	.categories .inner ul li, .inventory .inner ul li {
+		float: left;
+		width: 50%;
+	}
+	
 }
 
+@media only screen and (min-width : 769px) {
+	
+	.col {
+		float: left;
+		width: 50%;
+	}
+	
+	.categories .inner ul li, .inventory .inner ul li {
+		width: 33.3333333%;
+	}
+	
+}
 
 @media only screen and (min-width : 980px) {
 	
 	.inner {
 		margin: 0 auto;
+		max-width: 848px;
+	}
+	
+	.categories .inner ul li, .inventory .inner ul li {
+		width: 25%;
 	}
 	
 }

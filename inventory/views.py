@@ -70,8 +70,8 @@ def inv_item_list(request, category=None, sub_category = None):
         try:
             c = Category.objects.filter(category_name=decode_category(category))
             s = SubCategory.objects.filter(sub_category_name=decode_category(sub_category))
-            context_dict['category'] = c[0].category_name
-            context_dict['sub_category'] = s[0].sub_category_name
+            context_dict['category'] = (c[0].category_name, encode_category(c[0].category_name))
+            context_dict['sub_category'] = (s[0].sub_category_name, encode_category(s[0].sub_category_name))
             context_dict['items'] = InvItem.objects.filter(category=c, sub_category=s)
             return render_to_response('inventory/inventory_items.html', context_dict, context)
 

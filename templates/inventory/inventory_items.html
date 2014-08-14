@@ -6,6 +6,69 @@
 {% endblock %}
 
 {% block body_block %}
+	<section class="inventory">
+		<div class="inner">
+			<h1>Cartomizers</h1>
+			
+			<p><a href="{% url 'basefunctions.views.root' %}">Home</a> ::
+			<a href="{% url 'inventory.views.category_list' %}">All Categories</a> :: 
+			<a href="{% url 'inventory.views.sub_category_list' category.1 %}">{{ category.0 }}</a></p>
+
+			<ul class="cf">
+				{% for i in items %} 
+				<li>
+					<figure>
+						<a href="#"><img src="http://dummyimage.com/692x300/ddd4e4/fff"></a>
+					</figure>
+					<div class="details">
+						<p>{{ i.item_name }}</p>
+						<p>{{ i.price }}</p>
+					</div>
+				</li>
+				{% endfor %}
+				<!--
+				<li>
+					<figure>
+						<a href="#"><img src="http://dummyimage.com/692x300/ddd777/fff"></a>
+					</figure>
+					<div class="details">
+						<p>O-G Smoke Cloud Maker 2000</p>
+						<p>$32.99</p>
+					</div>
+				</li>
+				<li>
+					<figure>
+						<a href="#"><img src="http://dummyimage.com/692x300/eee9c9/fff"></a>
+					</figure>
+					<div class="details">
+						<p>O-G Smoke Cloud Maker 2000</p>
+						<p>$32.99</p>
+					</div>
+				</li>
+				<li>
+					<figure>
+						<a href="#"><img src="http://dummyimage.com/692x300/daa4f4/fff"></a>
+					</figure>
+					<div class="details">
+						<p>O-G Smoke Cloud Maker 2000</p>
+						<p>$32.99</p>
+					</div>
+				</li>
+					<li>
+					<figure>
+						<a href="#"><img src="http://dummyimage.com/692x300/4ec4e4/fff"></a>
+					</figure>
+					<div class="details">
+						<p>O-G Smoke Cloud Maker 2000</p>
+						<p>$32.99</p>
+					</div>
+				</li>-->
+			</ul>
+			<p><a href="inv.html"><span><< Return To Categories</span></a></p>
+		</div>
+	</section>
+
+
 	{% if items %}
 	{% else %}
 		Sorry there are no items in {{ category }} / {{ sub_category }}

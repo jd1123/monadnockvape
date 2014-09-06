@@ -126,7 +126,7 @@ p {
 	padding-left: 12px;
 }
 
-span {
+.button {
 	border: 2px solid #4B5564;
 	color: #22272f;
 	display: block;
@@ -136,6 +136,24 @@ span {
 	margin-bottom: 12px;
 	padding: 12px 4px;
 	text-transform: uppercase;
+}
+
+.deal {
+	background: #4B5564;
+	color: #eff3f5;
+	display: block;
+	font-weight: 400;
+	font-size: 13px;
+	line-height:18px;
+	margin-bottom: 12px;
+	padding: 12px 4px;
+	text-transform: uppercase;
+}
+
+.deal h3 {
+	font-weight: 700;
+	font-size: 18px;
+	margin-bottom: 4px;
 }
 
 .col {
@@ -158,12 +176,14 @@ span {
 	padding: 2px;
 	overflow:hidden;
 	height:254px;
+	height: 350px;
 	width: 100%;
 	margin-bottom: 12px;
 }
 
 #gmap_canvas {
 	height:246px;
+	height: 342px;
 	width: auto;
 	vertical-align: middle;
 }

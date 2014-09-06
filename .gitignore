@@ -3,3 +3,4 @@ settings.py
 .ropeproject
 *.swp
 *.pyc
+inventory/migrations/*

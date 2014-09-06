@@ -7,7 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from inventory.models import Category, SubCategory, InvItem
 from django.core.urlresolvers import reverse
 # Create your views here.
-from modanockvape.settings import DEBUG
+from monadnockvape.settings import DEBUG
 
 
 def root(request):

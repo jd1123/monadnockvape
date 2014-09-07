@@ -61,6 +61,7 @@ def inv_item_list(request, category=None, sub_category = None):
             context_dict['category'] = c[0].category_name
             context_dict['sub_category'] = 'all'
             context_dict['items'] = InvItem.objects.filter(category=c)
+	    context_dict['all'] = True
             return render_to_response('inventory/inventory_items.html', context_dict, context)
 
         except IndexError:

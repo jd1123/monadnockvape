@@ -11,7 +11,7 @@
 				<h1>Welcome To Our Store!</h1>
 				<figure>
 				    <!--	<img src="http://dummyimage.com/623x260/4ec4e4/fff"> -->
-				    <img src="{% static 'img/front.jpg' %}">
+				    <a href="{% url 'basefunctions.views.contact' %}"><img src="{% static 'img/front.jpg' %}"></a>
 				</figure>	
 				<p>Monadnock Vapor is a new vapor store located at 34 1/2 Washington St. in Keene, NH. We have a large selection of starter kits, mods and e-liquids for all your electronic cigarette needs.</p>
 				<p class="no-margin-bottom">Through quality merchandise and customer service, our mission is to give smokers a better alternative to tobacco, while also fulfilling the needs of the vaping enthusiast.  
@@ -26,7 +26,7 @@
 			<div class="inner cf">
 				<div class="col">
 					<h1>Products</h1>
-						<figure><img src="{% static 'img/mvp.png' %}"></figure>
+						<figure><a href="{% url 'inventory.views.category_list' %}"><img src="{% static 'img/mvp.png' %}"></a></figure>
 						<p>We sell a full range of personal vaporizer, juices, batteries, cartomizers and many other accessories.</p>
 						<a href="{% url 'inventory.views.category_list' %}"><span class="button">View our complete Inventory</span></a>
 				</div>

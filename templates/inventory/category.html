@@ -15,7 +15,9 @@
 					{% for a in args %}
 					<li>
 						<figure>
-							<a href="{% url 'inventory.views.sub_category_list' a.1 %}"><img src="http://dummyimage.com/250x250/ddd4e4/fff"></a>
+							<a href="{% url 'inventory.views.sub_category_list' a.1 %}">
+								<img src="{{a.0.picture_url}}">
+								<!--<img src="http://dummyimage.com/250x250/ddd4e4/fff">--></a>
 						</figure>
 						<div class="title">{{ a.0.category_name }}</div>
 					</li>

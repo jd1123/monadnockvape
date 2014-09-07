@@ -6,14 +6,14 @@ from django.contrib import admin
 
 class Category(models.Model):
     category_name = models.TextField(max_length = 200)
-
+    picture_url = models.URLField(blank=True)
     def __unicode__(self):
         return self.category_name
 
 class SubCategory(models.Model):
     category = models.ForeignKey(Category)
     sub_category_name = models.TextField(max_length = 200)
-
+    picture_url = models.URLField(blank=True)
     def __unicode__(self):
         return self.sub_category_name
 
@@ -33,11 +33,11 @@ class InvItem(models.Model):
         return self.item_name
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['category_name']
+    list_display = ['category_name','picture_url']
     search_fields = ['category_name']
 
 class SubCategoryAdmin(admin.ModelAdmin):
-    list_display = ['category' , 'sub_category_name']
+    list_display = ['category' , 'sub_category_name','picture_url']
     search_fields = ['category', 'sub_category_name']
 
 class InvItemAdmin(admin.ModelAdmin):

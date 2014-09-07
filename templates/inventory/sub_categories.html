@@ -7,7 +7,7 @@ SubCategory
 {% block body_block %}
 		<section class="categories">
 			<div class="inner">
-				<h1>Inventory</h1>
+				<h1>{{ category.1 }}</h1>
 
 				<p><a href="{% url 'basefunctions.views.root' %}">Home</a> ::
 				<a href="{% url 'inventory.views.category_list' %}">All Categories</a></p>

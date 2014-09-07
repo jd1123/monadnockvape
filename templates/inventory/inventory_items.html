@@ -8,7 +8,7 @@
 {% block body_block %}
 	<section class="inventory">
 		<div class="inner">
-			<h1>Cartomizers</h1>
+			<h1>{{category.0}} :: {{sub_category.0}}</h1>
 			
 			<p><a href="{% url 'basefunctions.views.root' %}">Home</a> ::
 			<a href="{% url 'inventory.views.category_list' %}">All Categories</a> :: 
@@ -18,7 +18,8 @@
 				{% for i in items %} 
 				<li>
 					<figure>
-						<a href="#"><img src="http://dummyimage.com/692x300/ddd4e4/fff"></a>
+						<!-- <a href="#"><img src="http://dummyimage.com/692x300/ddd4e4/fff"></a>-->
+						<a href="#"><img src="{{i.picture_url}}"></a>
 					</figure>
 					<div class="details">
 						<p>{{ i.item_name }}</p>

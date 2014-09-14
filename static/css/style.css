@@ -248,6 +248,17 @@ footer p {
 	font-weight: 400;
 }
 
+footer .sig {
+	font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-size: 10px;
+}
+
+.warning {
+	display: inline-block;
+	padding: 4px 10px 6px 10px;
+	background: #ffc550;
+}
+
 @media only screen and (min-width : 548px) {
 	
 	.categories .inner ul li, .inventory .inner ul li {

@@ -6,23 +6,14 @@
 		<section class="categories">
 			<div class="inner">
 				<p class="warning">Please pardon the appearance while we update our site...</p>
-				<h1>Inventory</h1>
+				<h1>item name</h1>
 				<!--<p><a href="{% url 'basefunctions.views.root' %}">Home</a>-->
 				<!-- <a href="{% url 'inventory.views.category_list' %}">All Categories</a></p>-->
 
-				<p>Choose a Category below:</p>
-				<ul class="cf">
-					{% for a in args %}
-					<li>
-						<figure>
-							<a href="{% url 'inventory.views.sub_category_list' a.1 %}">
-								<img src="{{a.0.picture_url}}">
-								<!--<img src="http://dummyimage.com/250x250/ddd4e4/fff">--></a>
-						</figure>
-						<div class="title">{{ a.0.category_name }}</div>
-					</li>
-					{% endfor %}
-				</ul>
+				<p>some text</p>
+				<figure>
+					<img src="http://dummyimage.com/600x400/ff000/fff">
+				</figure>
 			</div>
 		</section>
 

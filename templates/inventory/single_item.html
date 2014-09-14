@@ -3,17 +3,23 @@
 {% block title %} Categories {% endblock %}
 
 {% block body_block %}
-		<section class="categories">
+		<section class="single_item">
 			<div class="inner">
 				<p class="warning">Please pardon the appearance while we update our site...</p>
-				<h1>item name</h1>
-				<!--<p><a href="{% url 'basefunctions.views.root' %}">Home</a>-->
-				<!-- <a href="{% url 'inventory.views.category_list' %}">All Categories</a></p>-->
-
-				<p>some text</p>
-				<figure>
-					<img src="http://dummyimage.com/600x400/ff000/fff">
-				</figure>
+				<h1>{{ item_name }}</h1>
+				<div class="cf">
+				<!-- Image Size Should Be At Least 575px in height -->
+				<div class="single_left">
+					<figure>
+						<img src="{{ pic_url }}">
+					</figure>
+				</div>
+				<div class="single_right">
+					<p>{{ description }}</p>
+					<p class="price">${{ price }}</p>
+				</div>
+				</div>
+				<p><a href="{% url 'inventory.views.category_list' %}"><span class="button"><< Return To -sub cat name here-</span></a></p>
 			</div>
 		</section>
 

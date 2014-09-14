@@ -259,6 +259,13 @@ footer .sig {
 	background: #ffc550;
 }
 
+.single_right .price {
+	font-family: "Oswald", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	margin-top: 24px;
+}
+
 @media only screen and (min-width : 548px) {
 	
 	.categories .inner ul li, .inventory .inner ul li {
@@ -266,6 +273,25 @@ footer .sig {
 		width: 50%;
 	}
 	
+	
+}
+
+@media only screen and (min-width : 700px) {
+
+	.single_item h1 {
+		text-align: left;
+	}
+	
+	.single_left {
+		max-width: 300px;
+		float: left;
+	}
+	
+	.single_right {
+		text-align: start;
+		margin-left: 310px;
+	}
+		
 }
 
 @media only screen and (min-width : 769px) {
@@ -278,6 +304,7 @@ footer .sig {
 	.categories .inner ul li, .inventory .inner ul li {
 		width: 33.3333333%;
 	}
+	
 	
 }
 

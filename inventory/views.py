@@ -87,6 +87,7 @@ def single_item_view(request, category, sub_category, item_stub):
     context_dict['item_name']=inv_item.item_name
     context_dict['price'] = inv_item.price
     context_dict['description'] = inv_item.description
+    context_dict['pic_url'] = inv_item.picture_url
     print context_dict
 
     return render_to_response('inventory/single_item.html', context_dict, context)

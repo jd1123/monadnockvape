@@ -79,16 +79,17 @@ def inv_item_list(request, category=None, sub_category = None):
         except IndexError:
             raise Http404
 
-def single_item_view(request, item_stub):
+def single_item_view(request, category, sub_category, item_stub):
     context = RequestContext(request)
     context_dict = {}
     item = decode_category(item_stub)
-    inv_item = InvItem.objects.filter(item_name = item)
+    inv_item = InvItem.objects.filter(item_name=item)[0]
     context_dict['item_name']=inv_item.item_name
     context_dict['price'] = inv_item.price
     context_dict['description'] = inv_item.description
+    print context_dict
 
-    return render_to_response('inventory/single_item.html', context, context_dict)
+    return render_to_response('inventory/single_item.html', context_dict, context)
 
 def encode_category(category):
     s = category.split(' ')

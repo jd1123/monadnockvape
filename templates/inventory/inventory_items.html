@@ -19,11 +19,11 @@
 				<li>
 					<figure>
 						<!-- <a href="#"><img src="http://dummyimage.com/692x300/ddd4e4/fff"></a>-->
-						<a href="#"><img src="{{i.picture_url}}"></a>
+						<a href="{% url 'inventory.views.single_item_view' category.1 sub_category.1 i.1 %}"><img src="{{i.0.picture_url}}"></a>
 					</figure>
 					<div class="details">
-						<p>{{ i.item_name }}</p>
-						<p>{{ i.price }}</p>
+						<p>{{ i.0.item_name }}</p>
+						<p>{{ i.0.price }}</p>
 					</div>
 				</li>
 				{% endfor %}

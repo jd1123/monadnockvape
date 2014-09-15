@@ -60,7 +60,7 @@ def inv_item_list(request, category=None, sub_category = None):
             c=Category.objects.filter(category_name=decode_category(category))
             context_dict['category'] = c[0].category_name
             context_dict['sub_category'] = 'all'
-            context_dict['items'] = InvItem.objects.filter(category=c)
+            context_dict['items'] = [(x,encode_category(x.item_name)) for x in InvItem.objects.filter(category=c)]
             context_dict['all'] = True
             return render_to_response('inventory/inventory_items.html', context_dict, context)
 
@@ -73,7 +73,7 @@ def inv_item_list(request, category=None, sub_category = None):
             s = SubCategory.objects.filter(sub_category_name=decode_category(sub_category))
             context_dict['category'] = (c[0].category_name, encode_category(c[0].category_name))
             context_dict['sub_category'] = (s[0].sub_category_name, encode_category(s[0].sub_category_name))
-            context_dict['items'] = InvItem.objects.filter(category=c, sub_category=s)
+            context_dict['items'] = [(x, encode_category(x.item_name)) for x in InvItem.objects.filter(category=c, sub_category=s)]
             return render_to_response('inventory/inventory_items.html', context_dict, context)
 
         except IndexError:

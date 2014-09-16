@@ -83,15 +83,18 @@ def single_item_view(request, category, sub_category, item_stub):
     context = RequestContext(request)
     context_dict = {}
     item = decode_category(item_stub)
-    inv_item = InvItem.objects.filter(item_name=item)[0]
-    context_dict['item_name']=inv_item.item_name
-    context_dict['price'] = inv_item.price
-    context_dict['description'] = inv_item.description
-    context_dict['pic_url'] = inv_item.picture_url
+    try:
+        inv_item = InvItem.objects.filter(item_name=item)[0]
+        context_dict['item_name']=inv_item.item_name
+        context_dict['price'] = inv_item.price
+        context_dict['description'] = inv_item.description
+        context_dict['pic_url'] = inv_item.picture_url
+        print context_dict
+    except:
+        raise Http404
+
     context_dict['sub_category'] = sub_category
     context_dict['category'] = category
-    print context_dict
-
     return render_to_response('inventory/single_item.html', context_dict, context)
 
 def encode_category(category):

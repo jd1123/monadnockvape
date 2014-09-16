@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head_block %} 
+{%endblock%}
+{% block title %} {{post.title}} {%endblock%}
+
+{%block body_block %}
+<section class="home-top">
+	<div class="inner">
+			<h1>{{post.title}} <br />
+			<small>Created by {{post.creator.username}} at {{post.created}}
+			{% if user.username == post.creator.username %}
+				<a href="{% url 'blog.views.blogpost' pk %}">Edit</a>
+			{% endif %}
+			</small></h1>
+			{{body | safe}} 
+			<br/>
+
+			<a href="{% url 'blog.views.index' %}">Return to index</a>
+	</div> <!-- container narrow -->
+</section>
+{% endblock %}
+

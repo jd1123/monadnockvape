@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_block %}
+		<link href="{% static 'css/gallery.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %} New Post {% endblock %}
+
+{% block body_block %}
+	<section class="home-top">
+	<div class="inner">
+		<h4>Enter your post here:</h4> <br />
+		{% if edit %}
+		<form id="blogpost" method="post" action="/blog/edit/{{pk}}/">
+		{% else %}
+		<form id="blogpost" method="post" action="/blog/post/">
+		{% endif %}
+			{% csrf_token %}
+			Title: <br/>
+			<input type="text" class="form-control sf" name="title" placeholder="Title" {% if body %}value="{{title}}"{%endif%}/><br/>
+			Post: <br/>
+			<textarea tabindex="2" class="input sf" rows="15" name="body">{% if body %}{{ body }}{% endif %}</textarea><br />
+			<input class="btn btn-primary" type="submit" value="Post" />
+		</form>
+	</div>
+	</section>
+{% endblock %}
+

@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class BlogPost(models.Model):
     title = models.CharField(max_length=120)
     body = models.TextField()
-    created = models.DateTimeField(auto_no_add=True)
+    created = models.DateTimeField(auto_now_add=True)
     creator = models.ForeignKey(User)
 
 

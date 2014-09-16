@@ -24,7 +24,7 @@
 				</li>
 				{% endfor %}
 			</ul>
-			<p><a href="{% url 'inventory.views.category_list' %}"><span class="button"><< Return To Categories</span></a></p>
+			<p><a href="{% url 'inventory.views.sub_category_list' category.1 %}"><span class="button"><< Return To {{ category.0 }}</span></a></p>
 		</div>
 	</section>
 

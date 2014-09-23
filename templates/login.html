@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block body_block %}
+
+{% if auth %}
+Welcome back.
+<a href="{% url 'basefunctions.views.user_logout' %}">Logout</a>
+{% else %}
+
+<div>
+	<h3>Login</h3>
+	<form id="login_form" method="post" action="/login/">
+		{% csrf_token %}
+		<input type="text" name="username" value="" size="50" placeholder="Username"/>
+		<br>
+		<input type="password" name="password" value="" size="50" placeholder="Password"/>
+		<br>
+		<input type="hidden" name="next" value="{{next}}"/>
+		<input class="button" type="submit" value="Login"/>
+	</form>
+</div>
+{% endif %}
+{% endblock %}

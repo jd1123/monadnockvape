@@ -17,7 +17,7 @@ def root(request):
 def category_list(request):
     context = RequestContext(request)
     context_dict = {}
-    c = Category.objects.all()
+    c = Category.objects.all().order_by('category_name').order_by('category_name')
     args = [(cat, encode_category(cat.category_name)) for cat in c]
     context_dict['categories'] = c
     context_dict['args'] = args
@@ -31,7 +31,7 @@ def sub_category_list(request, category=None):
         return HttpResponseRedirect(reverse('inventory.category_list'))
     else:
         c = Category.objects.filter(category_name=decode_category(category))
-        subs = SubCategory.objects.filter(category = c)
+        subs = SubCategory.objects.filter(category = c).order_by('sub_category_name').order_by('sub_category_name')
         print "Category : " + category
         if len(c) is 0:
             raise Http404
@@ -60,7 +60,7 @@ def inv_item_list(request, category=None, sub_category = None):
             c=Category.objects.filter(category_name=decode_category(category))
             context_dict['category'] = c[0].category_name
             context_dict['sub_category'] = 'all'
-            context_dict['items'] = [(x,encode_category(x.item_name)) for x in InvItem.objects.filter(category=c)]
+            context_dict['items'] = [(x,encode_category(x.item_name)) for x in InvItem.objects.filter(category=c).order_by('item_name')]
             context_dict['all'] = True
             return render_to_response('inventory/inventory_items.html', context_dict, context)
 
@@ -73,7 +73,7 @@ def inv_item_list(request, category=None, sub_category = None):
             s = SubCategory.objects.filter(sub_category_name=decode_category(sub_category))
             context_dict['category'] = (c[0].category_name, encode_category(c[0].category_name))
             context_dict['sub_category'] = (s[0].sub_category_name, encode_category(s[0].sub_category_name))
-            context_dict['items'] = [(x, encode_category(x.item_name)) for x in InvItem.objects.filter(category=c, sub_category=s)]
+            context_dict['items'] = [(x, encode_category(x.item_name)) for x in InvItem.objects.filter(category=c, sub_category=s).order_by('item_name')]
             return render_to_response('inventory/inventory_items.html', context_dict, context)
 
         except IndexError:
@@ -94,6 +94,7 @@ def single_item_view(request, category, sub_category, item_stub):
         raise Http404
 
     context_dict['sub_category'] = sub_category
+    context_dict['sc'] = decode_category(sub_category)
     context_dict['category'] = category
     return render_to_response('inventory/single_item.html', context_dict, context)
 

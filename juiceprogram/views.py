@@ -18,9 +18,7 @@ def index(request):
 	if request.method == 'GET':
 		return render_to_response('juiceprogram/index.html', context, context_dict)
 	elif request.method == 'POST':
-		# look at post data and create a new user
-		# but check if the user is already created
-		
+		print request.POST	
 		return render_to_response('juiceprogram/index.html', context, context_dict)
 	else:
 		return Http404

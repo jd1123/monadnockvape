@@ -7,13 +7,13 @@
 
 <div class="inner">
 	<p>Add a new user:</p>
-	<form action="{% url 'juiceprogram.views.index' %}" method="POST">
-		<p><label for="first_name">First Name: </label><input type="text" id="first_name"></p>
-		<p><label for="last_name">Last Name: </label><input type="text" id="last_name"></p>
-		<p><label for="juices">Juices Purchased: </label><input type="number" id="juices" value=0></p>
-		<p><label for="claimed">Juices Claimed: </label><input type="number" id="claimed" value=0></p>
+	<form id="userpost" action="{% url 'juiceprogram.views.index' %}" method="post">
+		{% csrf_token %}
+		<p><label for="first_name">First Name: </label><input type="text" name="first_name"></p>
+		<p><label for="last_name">Last Name: </label><input type="text" name="last_name"></p>
+		<p><label for="juices">Juices Purchased: </label><input type="number" name="juices" value=0></p>
+		<p><label for="claimed">Juices Claimed: </label><input type="number" name="claimed" value=0></p>
 		<p><input type="submit" value="Create"></p>
-
 	</form>	
 	<p><a href="{% url 'juiceprogram.views.user_lookup' %}">Look up a user</a></p>
 </div>

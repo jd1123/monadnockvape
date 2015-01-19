@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+<div class="inner">
+	{% if customer %}
+	<p><label class="bold">First Name:</label>{{first_name}}</p>
+	<p><label class="bold">Last Name:</label>{{last_name}}</p>
+	<p><label class="bold">Juices Purchased:</label>{{juices_purchased}}</p>
+	<p><label class="bold">Juices Claimed:</label>{{juices_claimed}}</p>
+	<p><label class="bold">Eligible:</label>{{juices_eligible}}</p>
+	{% else %}
+	<p>No customer found with id: {{id_num}} </p>
+	{% endif %}
+</div>
+{% endblock %}

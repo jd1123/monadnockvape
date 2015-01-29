@@ -12,10 +12,16 @@ from juiceprogram.models import Customer, new_customer
 
 @login_required
 def index(request):
+    context = RequestContext(request)
+    context_dict = {}
+    return render_to_response('juiceprogram/index.html', context_dict, context)
+
+@login_required
+def create(request):
 	context = RequestContext(request)
 	context_dict = {}
 	if request.method == 'GET':
-		return render_to_response('juiceprogram/index.html', context_dict, context)
+		return render_to_response('juiceprogram/create.html', context_dict, context)
 	elif request.method == 'POST':
                 fname = request.POST['first_name']
                 lname = request.POST['last_name']
@@ -52,7 +58,6 @@ def user_view(request, id_num):
             context_dict['juices_purchased'] = cust.juices_purchased
             context_dict['juices_claimed'] = cust.juices_claimed
             context_dict['juices_eligible'] = (cust.juices_purchased % 5) - cust.juices_purchased - cust.juices_claimed
-            print context_dict
             return render_to_response("juiceprogram/user_view.html", context_dict, context)
             # render it to the page
     elif request.method == "POST":
@@ -114,7 +119,6 @@ def user_lookup(request):
 		else:
 		    custs = []
 	
-                print "custs:", custs
 		if len(custs) != 0:
                     context_dict['customers']=custs
                 else:

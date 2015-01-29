@@ -3,24 +3,6 @@
 {% block body_block %}
 <section class="home-top"> 
 <div class="inner">
-	{% if customers %}
-	<div class="inner">
-	<table>
-		{% for c in customers %}
-		<tr><p> {{ c.id_num }} <a href="{% url 'juiceprogram.views.user_view' c.id_num %}">{{ c.first_name}} {{ c.last_name }}</a></p></tr>
-		{% endfor %}
-	</table>
-	</div>
-	{% else  %}
-		{% if searched %}
-		<p>nothing found</p>
-		{% endif %}
-	{% endif %}
-	{% if error %}
-	<div class="inner">
-		{{ error }}
-	</div>
-	{% endif %}
 	<form id="lookup" action="{% url 'juiceprogram.views.user_lookup' %}" method="post"> 
 		{% csrf_token %}	
 		<p><label for="first_name">First Name: </label><input type="text" name="first_name"></p>
@@ -28,6 +10,22 @@
 		<p><label for="last_name">Id: </label><input type="number" name="id"></p>
 		<p><input type="submit" value="Look up"></p>
 	</form>
+	{% if error %}
+	<div class="inner">
+		{{ error }}
+	{% else %}
+	</div>
+		{% if customers %}
+		<div class="inner">
+		<table>
+			<tr><p> ID first_name  c.last_name </p></tr>
+			{% for c in customers %}
+			<tr><p> {{ c.id_num }} <a href="{% url 'juiceprogram.views.user_view' c.id_num %}">{{ c.first_name}} {{ c.last_name }}</a></p></tr>
+			{% endfor %}
+		</table>
+		</div>
+		{% endif %}
+	{% endif %}
 </div>
 </section>
 {% endblock %}

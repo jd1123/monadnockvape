@@ -94,23 +94,35 @@ def user_lookup(request):
 	if request.method == 'GET':
 		return render_to_response('juiceprogram/user_lookup.html', context_dict, context)
 	elif request.method == 'POST':
-		context_dict['searched'] = True
 		lname = request.POST['last_name']
 		fname = request.POST['first_name']
 		id_num = request.POST['id']
+                if lname or fname or id_num:
+		    context_dict['searched'] = True
+                    searched = True
+                else:
+                    searched=False
+
 		if id_num != '':
 			custs=Customer.objects.all().filter(id_num = id_num)
 		elif lname != '':
-			custs = Customer.objects.all().filter(last_name = lname)
-			if fname != '':
-				custs.filter(first_name = fname)
+                    custs = Customer.objects.all().filter(last_name = lname)
+                    if fname != '':
+                            custs.filter(first_name = fname)
 		elif fname != '':
-			custs = Customer.objects.all().filter(first_name = fname)
+		    custs = Customer.objects.all().filter(first_name = fname)
 		else:
-			context_dict['error'] = "Nothing found!"
-		
+		    custs = []
+	
+                print "custs:", custs
 		if len(custs) != 0:
-			context_dict['customers']=custs
+                    context_dict['customers']=custs
+                else:
+                    if searched:
+                        context_dict['error'] = 'Nothing found'
+                    else:
+                        context_dict['error'] = 'Invalid form'
+
 		return render_to_response('juiceprogram/user_lookup.html', context_dict, context)
 	else:
 		raise Http404

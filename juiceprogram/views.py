@@ -94,6 +94,7 @@ def user_lookup(request):
 	if request.method == 'GET':
 		return render_to_response('juiceprogram/user_lookup.html', context_dict, context)
 	elif request.method == 'POST':
+		context_dict['searched'] = True
 		lname = request.POST['last_name']
 		fname = request.POST['first_name']
 		id_num = request.POST['id']

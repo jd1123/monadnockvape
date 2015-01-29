@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 
 {% block body_block %}
+<section class="home-top"> 
 <div class="inner">
-	{% if customers and not error %}
+	{% if customers %}
 	<div class="inner">
+	<table>
 		{% for c in customers %}
-		<p> {{ c.id_num }} <a href="{% url 'juiceprogram.views.user_view' c.id_num %}">{{ c.first_name}} {{ c.last_name }}</a></p>
+		<tr><p> {{ c.id_num }} <a href="{% url 'juiceprogram.views.user_view' c.id_num %}">{{ c.first_name}} {{ c.last_name }}</a></p></tr>
 		{% endfor %}
+	</table>
 	</div>
-	{% else %}
-	nothing found
+	{% else  %}
+		{% if searched %}
+		<p>nothing found</p>
+		{% endif %}
 	{% endif %}
 	{% if error %}
 	<div class="inner">
@@ -24,4 +29,5 @@
 		<p><input type="submit" value="Look up"></p>
 	</form>
 </div>
+</section>
 {% endblock %}

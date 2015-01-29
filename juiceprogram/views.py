@@ -77,8 +77,11 @@ def user_view(request, id_num):
                 cust.save()
                 return render_to_response("juiceprogram/user_view.html", context_dict, context)
             elif request.POST.get("claim"):
-                return render("TBI")
-                pass
+                cust.juices_claimed = cust.juices_claimed + 1
+                context_dict['juices_purchased'] = cust.juices_purchased 
+                context_dict['juices_eligible'] = cust.juices_purchased/5 - (cust.juices_purchased % 5)/5 - cust.juices_claimed
+                cust.save()
+                return render_to_response("juiceprogram/user_view.html", context_dict, context)
     else:
         raise Http404
 
@@ -86,13 +89,27 @@ def user_view(request, id_num):
 
 @login_required
 def user_lookup(request):
+	context = RequestContext(request)
+	context_dict = {}
 	if request.method == 'GET':
-		context = RequestContext()
-		context_dict = {}
-		return render_to_response('juiceprogram/index.html', context_dict, context)
+		return render_to_response('juiceprogram/user_lookup.html', context_dict, context)
 	elif request.method == 'POST':
-		# allow changes to user juices etc
+		lname = request.POST['last_name']
+		fname = request.POST['first_name']
+		id_num = request.POST['id']
+		if id_num != '':
+			custs=Customer.objects.all().filter(id_num = id_num)
+		elif lname != '':
+			custs = Customer.objects.all().filter(last_name = lname)
+			if fname != '':
+				custs.filter(first_name = fname)
+		elif fname != '':
+			custs = Customer.objects.all().filter(first_name = fname)
+		else:
+			context_dict['error'] = "Nothing found!"
 		
-		return render_to_response('juiceprogram/index.html', context_dict, context)
+		if len(custs) != 0:
+			context_dict['customers']=custs
+		return render_to_response('juiceprogram/user_lookup.html', context_dict, context)
 	else:
 		raise Http404

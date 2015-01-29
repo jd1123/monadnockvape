@@ -61,9 +61,9 @@ def user_login(request):
                 print "Next: ",
                 print nxt
                 if nxt == 'None':
-                    return HttpResponseRedirect('/')
+                    return HttpResponseRedirect('/juiceprogram/')
                 else:
-                    return HttpResponseRedirect(nxt)
+                    return HttpResponseRedirect('/juiceprogram/')
             else:
                 return HttpResponse("Your account is disabled")
         else:
@@ -86,7 +86,7 @@ def user_logout(request):
     if request.user.is_authenticated():
         logout(request)
         if refer:
-            HttpResponseRedirect(refer)
+            HttpResponseRedirect('/')
         else:
             HttpResponseRedirect('/')
     else:

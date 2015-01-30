@@ -83,6 +83,7 @@ def user_view(request, id_num):
                 return render_to_response("juiceprogram/user_view.html", context_dict, context)
             elif request.POST.get("claim"):
                 cust.juices_claimed = cust.juices_claimed + 1
+                context_dict['juices_claimed'] = cust.juices_claimed
                 context_dict['juices_purchased'] = cust.juices_purchased 
                 context_dict['juices_eligible'] = cust.juices_purchased/5 - (cust.juices_purchased % 5)/5 - cust.juices_claimed
                 cust.save()

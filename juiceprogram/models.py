@@ -23,3 +23,9 @@ def new_customer(first_name, last_name, juices=0, claimed=0):
 	new_id = Customer.objects.all().order_by('id_num')[l-1].id_num+1
 	c = Customer.objects.create(first_name=first_name, last_name=last_name, id_num = new_id, juices_purchased=juices, juices_claimed=claimed)
 	return c
+
+def default_customer():
+	print "Creating default user"
+	c = Customer.objects.create(first_name='John', last_name='Doe', id_num=0, juices_purchased=0, juices_claimed=0)
+	c.save()
+

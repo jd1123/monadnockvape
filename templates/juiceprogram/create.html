@@ -7,7 +7,7 @@
 <section class="home-top">
 <div class="inner">
 	<p>Add a new user:</p>
-	<form id="userpost" action="{% url 'juiceprogram.views.index' %}" method="post">
+	<form id="userpost" action="{% url 'juiceprogram.views.create' %}" method="post">
 		{% csrf_token %}
 		<p><label for="first_name">First Name: </label><input type="text" name="first_name"></p>
 		<p><label for="last_name">Last Name: </label><input type="text" name="last_name"></p>

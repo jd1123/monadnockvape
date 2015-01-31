@@ -86,8 +86,8 @@ def user_logout(request):
     if request.user.is_authenticated():
         logout(request)
         if refer:
-            HttpResponseRedirect('/')
+            return HttpResponseRedirect('/')
         else:
-            HttpResponseRedirect('/')
+            return HttpResponseRedirect('/')
     else:
         return render_to_response('logout_error.html', context)

@@ -138,6 +138,19 @@ p {
 	text-transform: uppercase;
 }
 
+.outline {
+	border: 2px solid #4B5564;
+	color: #22272f;
+	display: block;
+	font-weight: 400;
+	font-size: 15px;
+	line-height:18px;
+	margin-bottom: 12px;
+	padding: 12px 4px;
+}
+
+
+
 .deal {
 	background: #4B5564;
 	color: #eff3f5;

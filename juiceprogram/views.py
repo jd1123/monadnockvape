@@ -111,8 +111,10 @@ def user_list(request, pg):
 		pages = Paginator(all_entries, 25)
 		context_dict['pages']=pages.page(pg)
 		if not pg:
-			context_dict['users'] = pages.pg(1)
+			context_dict['page_num'] = 1
+                        context_dict['users'] = pages.pg(1)
 		else:
+			context_dict['page_num'] = pg
 			context_dict['users'] = pages.page(pg)
 		
 		return render_to_response('juiceprogram/user_list.html', context_dict, context)

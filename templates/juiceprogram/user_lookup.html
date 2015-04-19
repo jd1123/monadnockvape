@@ -3,6 +3,7 @@
 {% block body_block %}
 <section class="home-top"> 
 <div class="inner">
+	<p><a href="{% url 'juiceprogram.views.index' %}">Home</a> | <a href="{% url 'juiceprogram.views.user_lookup' %}">Look up a user</a></p>
 	<form id="lookup" action="{% url 'juiceprogram.views.user_lookup' %}" method="post"> 
 		{% csrf_token %}	
 		<p><label for="first_name">First Name: </label><input type="text" name="first_name"></p>

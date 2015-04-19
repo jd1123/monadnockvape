@@ -6,6 +6,7 @@
 {% block body_block %}
 <section class="home-top">
 <div class="inner">
+	<p><a href="{% url 'juiceprogram.views.index' %}">Home</a> | <a href="{% url 'juiceprogram.views.user_lookup' %}">Look up a user</a></p>
 	<p>Add a new user:</p>
 	<form id="userpost" action="{% url 'juiceprogram.views.create' %}" method="post">
 		{% csrf_token %}

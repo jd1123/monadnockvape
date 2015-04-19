@@ -2,6 +2,8 @@
 
 {% block body_block %}
 
+	<p><a href="{% url 'juiceprogram.views.index' %}">Home</a> | <a href="{% url 'juiceprogram.views.user_lookup' %}">Look up a user</a></p>
+<u>ID</u>---<u>Name </u><br />
 {% if users %}
 
 	{% for u in users %}
@@ -10,6 +12,8 @@
 	{% endfor %}
 	<br />
 {% endif %}
+<p>
+	Page: {{page_num}} | 
 	{% if pages.has_previous %}
 		<a href="{% url 'juiceprogram.views.user_list' pages.previous_page_number %}">previous</a> | 
 	{% endif %}
@@ -18,5 +22,6 @@
 	{% else %}
 		no next
 	{% endif %}	
-
+	</p>
+	<p><a href="{% url 'juiceprogram.views.index' %}">Home</a> | <a href="{% url 'juiceprogram.views.user_lookup' %}">Look up a user</a></p>
 {% endblock %}

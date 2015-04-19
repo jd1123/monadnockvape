@@ -4,3 +4,4 @@ settings.py
 *.swp
 *.pyc
 inventory/migrations/*
+jp.csv

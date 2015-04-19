@@ -69,27 +69,35 @@ def user_view(request, id_num):
             context_dict['id_num'] = id_num
             return render_to_response("juiceprogram/user_view.html", context_dict, context)
         else:
-            cust = cust[0]
-            context_dict['customer'] = True
-            context_dict['id_num'] = id_num
-            context_dict['first_name'] = cust.first_name
-            context_dict['last_name'] = cust.last_name
-            context_dict['juices_purchased'] = cust.juices_purchased
-            context_dict['juices_claimed'] = cust.juices_claimed
-            context_dict['juices_eligible'] = cust.juices_purchased/5 - (cust.juices_purchased % 5)/5 - cust.juices_claimed
-            if request.POST.get("addjuice"):
-                cust.juices_purchased = cust.juices_purchased + 1
-                context_dict['juices_purchased'] = cust.juices_purchased 
-                context_dict['juices_eligible'] = cust.juices_purchased/5 - (cust.juices_purchased % 5)/5 - cust.juices_claimed
-                cust.save()
-                return render_to_response("juiceprogram/user_view.html", context_dict, context)
-            elif request.POST.get("claim"):
-                cust.juices_claimed = cust.juices_claimed + 1
-                context_dict['juices_claimed'] = cust.juices_claimed
-                context_dict['juices_purchased'] = cust.juices_purchased 
-                context_dict['juices_eligible'] = cust.juices_purchased/5 - (cust.juices_purchased % 5)/5 - cust.juices_claimed
-                cust.save()
-                return render_to_response("juiceprogram/user_view.html", context_dict, context)
+            
+			cust = cust[0]
+			context_dict['customer'] = True
+			context_dict['id_num'] = id_num
+			context_dict['first_name'] = cust.first_name
+			context_dict['last_name'] = cust.last_name
+			context_dict['juices_purchased'] = cust.juices_purchased
+			context_dict['juices_claimed'] = cust.juices_claimed
+			context_dict['juices_eligible'] = cust.juices_purchased/5 - (cust.juices_purchased % 5)/5 - cust.juices_claimed
+			
+			if request.POST.get("addjuice"):
+				cust.juices_purchased = cust.juices_purchased + 1
+				context_dict['juices_purchased'] = cust.juices_purchased 
+				context_dict['juices_eligible'] = cust.juices_purchased/5 - (cust.juices_purchased % 5)/5 - cust.juices_claimed
+				cust.save()
+				return render_to_response("juiceprogram/user_view.html", context_dict, context)
+			elif request.POST.get("claim"):
+				cust.juices_claimed = cust.juices_claimed + 1
+				context_dict['juices_claimed'] = cust.juices_claimed
+				context_dict['juices_purchased'] = cust.juices_purchased 
+				context_dict['juices_eligible'] = cust.juices_purchased/5 - (cust.juices_purchased % 5)/5 - cust.juices_claimed
+				cust.save()
+				return render_to_response("juiceprogram/user_view.html", context_dict, context)
+			elif request.POST.get("subjuice"):
+				cust.juices_purchased = cust.juices_purchased - 1
+				context_dict['juices_purchased'] = cust.juices_purchased 
+				context_dict['juices_eligible'] = cust.juices_purchased/5 - (cust.juices_purchased % 5)/5 - cust.juices_claimed
+				cust.save()
+				return render_to_response("juiceprogram/user_view.html", context_dict, context)
     else:
         raise Http404
 

@@ -4,6 +4,7 @@
 <div class="inner">
 	<p>Welcome to the JuiceProgram App</p>
 	<a href="/juiceprogram/create"><button>Create New User</button></a><br/>
-	<a href="/juiceprogram/lookup"><button>Lookup a user</button></a>
+	<a href="/juiceprogram/lookup"><button>Lookup a user</button></a><br />
+	<a href="{% url 'juiceprogram.views.user_list' 1 %}"><button>Customer List</button></a>
 </div>
 {% endblock %}

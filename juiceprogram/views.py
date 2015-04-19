@@ -108,7 +108,7 @@ def user_list(request, pg):
 	context_dict = {}
 	if request.method == 'GET':
 		all_entries = Customer.objects.all()
-		pages = Paginator(all_entries, 15)
+		pages = Paginator(all_entries, 25)
 		context_dict['pages']=pages.page(pg)
 		if not pg:
 			context_dict['users'] = pages.pg(1)

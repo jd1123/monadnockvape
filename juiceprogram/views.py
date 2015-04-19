@@ -5,6 +5,8 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
+from django.core.paginator import Paginator
+
 from monadnockvape.settings import DEBUG
 from juiceprogram.models import Customer, new_customer
 
@@ -90,6 +92,22 @@ def user_view(request, id_num):
                 return render_to_response("juiceprogram/user_view.html", context_dict, context)
     else:
         raise Http404
+
+
+@login_required
+def user_list(request, page):
+	context=RequestContext(request)
+	context_dict = {}
+	if request.method == 'GET':
+		all_entries = Customer.objects.all()
+		pages = Paginator(all_entries, 15)
+		context_dict['pages']=pages
+		if not page:
+			context_dict['users'] = pages.page(1)
+		else:
+			context_dict['users'] = pages.page(page)
+		
+		return render_to_response('juiceprogram/user_list.html', context_dict, context)
 
 
 

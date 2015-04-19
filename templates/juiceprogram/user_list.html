@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+
+{% if users %}
+
+	{% for u in users %}
+	{{u.id_num}}<a href="{% url 'juiceprogram.views.user_view' u.id_num %}"> {{u.first_name}} {{u.last_name}}</a>	</br>	
+
+	{% endfor %}
+{% endif %}
+
+{% if pages %}
+	{% for p in pages.object_list %}
+	{% if p.has_next %}
+		<a href="{% url 'juiceprogram.views.user_list' p.next_page_numer %}">next</a>
+		{% endif %}	
+	{% endfor %}
+{% endif %}
+
+{% endblock %}

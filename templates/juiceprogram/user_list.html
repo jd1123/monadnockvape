@@ -8,8 +8,11 @@
 	{{u.id_num}}<a href="{% url 'juiceprogram.views.user_view' u.id_num %}"> {{u.first_name}} {{u.last_name}}</a>	</br>	
 
 	{% endfor %}
+	<br />
 {% endif %}
-
+	{% if pages.has_previous %}
+		<a href="{% url 'juiceprogram.views.user_list' pages.previous_page_number %}">previous</a> | 
+	{% endif %}
 	{% if pages.has_next %}
 		<a href="{% url 'juiceprogram.views.user_list' pages.next_page_number %}">next</a>
 	{% else %}

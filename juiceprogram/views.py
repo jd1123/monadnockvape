@@ -60,6 +60,7 @@ def user_view(request, id_num):
             context_dict['juices_purchased'] = cust.juices_purchased
             context_dict['juices_claimed'] = cust.juices_claimed
             context_dict['juices_eligible'] = (cust.juices_purchased % 5) - cust.juices_purchased - cust.juices_claimed
+            context_dict['notes'] = cust.notes
             return render_to_response("juiceprogram/user_view.html", context_dict, context)
             # render it to the page
     elif request.method == "POST":

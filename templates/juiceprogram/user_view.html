@@ -2,13 +2,19 @@
 
 {% block body_block %}
 <div class="inner">
+	<p><a href="{% url 'juiceprogram.views.index' %}">Home</a> | <a href="{% url 'juiceprogram.views.user_lookup' %}">Look up a user</a></p>
 	{% if customer %}
 	<p><b>Record for: </b></p><p>{{first_name}} {{last_name}}</p><p>ID# {{id_num}}</p>
 	<form id="useredit" action="{% url 'juiceprogram.views.user_view' id_num %}" method="post">
 		{% csrf_token %}
-		<p><label class="bold">Juices Purchased:</label><input type="number" name="juices_claimed" value={{juices_purchased}}><input type="submit" name="addjuice" Value="Add juice"><input type="submit" name="subjuice" Value="Sub juice"></p>
-		<p><label class="bold">Juices Claimed:</label>{{juices_claimed}}<input type="submit" name="claim" Value="Claim"> </p>
+		<p><label class="bold">Juices Purchased:</label><input type="number" name="juices_claimed" value={{juices_purchased}}><br/>
+		<input type="submit" name="addjuice" Value="Add juice"><input type="submit" name="subjuice" Value="Sub juice"></p>
+		<p><label class="bold">Juices Claimed:</label>{{juices_claimed}}<br/>
+		<input type="submit" name="claim" Value="Claim"> </p>
 		<p><label class="bold">Eligible:</label>{{juices_eligible}}</p>
+		<p>Notes:  <br />
+		<textarea rows="4" col="80">{{notes}}</textarea>
+		</p>
 	
 	</form>
 	{% else %}

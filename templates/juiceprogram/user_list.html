@@ -10,12 +10,10 @@
 	{% endfor %}
 {% endif %}
 
-{% if pages %}
-	{% for p in pages.object_list %}
-	{% if p.has_next %}
-		<a href="{% url 'juiceprogram.views.user_list' p.next_page_numer %}">next</a>
-		{% endif %}	
-	{% endfor %}
-{% endif %}
+	{% if pages.has_next %}
+		<a href="{% url 'juiceprogram.views.user_list' pages.next_page_number %}">next</a>
+	{% else %}
+		no next
+	{% endif %}	
 
 {% endblock %}

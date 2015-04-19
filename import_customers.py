@@ -16,12 +16,13 @@ def import_customers():
 def save_customer(customer):
     fname = customer[0]
     lname = customer[1]
+    notes = customer[4]
 
     if customer[3] == '':
         juices = 0
     else:
         juices = int(customer[3])
 
-    new_customer(fname, lname, juices, 0) 
+    new_customer(fname, lname, juices, 0, notes) 
 
 import_customers()

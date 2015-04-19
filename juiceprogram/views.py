@@ -103,17 +103,17 @@ def user_view(request, id_num):
 
 
 @login_required
-def user_list(request, page):
+def user_list(request, pg):
 	context=RequestContext(request)
 	context_dict = {}
 	if request.method == 'GET':
 		all_entries = Customer.objects.all()
 		pages = Paginator(all_entries, 15)
-		context_dict['pages']=pages
-		if not page:
-			context_dict['users'] = pages.page(1)
+		context_dict['pages']=pages.page(pg)
+		if not pg:
+			context_dict['users'] = pages.pg(1)
 		else:
-			context_dict['users'] = pages.page(page)
+			context_dict['users'] = pages.page(pg)
 		
 		return render_to_response('juiceprogram/user_list.html', context_dict, context)
 

@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator
+from django.db.models import Q
 
 from monadnockvape.settings import DEBUG
 from juiceprogram.models import Customer, new_customer
@@ -121,6 +122,29 @@ def user_list(request, pg):
 		return render_to_response('juiceprogram/user_list.html', context_dict, context)
 
 
+
+@login_required
+def alphabetic_list(request, let):
+    context = RequestContext(request)
+    context_dict = {}
+    letters = []
+    valid_letters = 'abcdefghijklmnopqrstuvwxyz'.upper()
+    for i in valid_letters:
+        letters.append(i)
+    if not let:
+        let = 'A'
+    else:
+        if not let in valid_letters:
+            return Http404 
+     
+    cust_list = Customer.objects.filter(Q(last_name__startswith=let) | Q(last_name__startswith=let.lower())).order_by('last_name')
+    print cust_list
+    context_dict['custs'] = cust_list
+    context_dict['letters'] = letters
+
+    return render_to_response('juiceprogram/alphabetic_list.html', context_dict, context)
+
+    
 
 @login_required
 def user_lookup(request):

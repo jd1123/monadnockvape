@@ -1,0 +1,106 @@
+#overlay {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s; }
+
+#loader {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s; }
+
+.scrubber {
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: scrubber-load;
+  animation-name: scrubber-load; }
+
+@-webkit-keyframes scrubber-load {
+  0% {
+    width: 0; }
+
+  25% {
+    width: 15%; }
+
+  50% {
+    width: 45%; }
+
+  75% {
+    width: 85%; }
+
+  100% {
+    width: 100%; } }
+
+@keyframes scrubber-load {
+  0% {
+    width: 0; }
+
+  25% {
+    width: 15%; }
+
+  50% {
+    width: 45%; }
+
+  75% {
+    width: 85%; }
+
+  100% {
+    width: 100%; } }
+
+.mobile-nav {
+  -webkit-transition: max-height 0.25s cubic-bezier(0.82, 0.47, 0.61, 0.97);
+  transition: max-height 0.25s cubic-bezier(0.82, 0.47, 0.61, 0.97); }
+
+.navicon span, .navicon span:before, .navicon span:after {
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear; }
+
+.nav-active .navicon span:before, .nav-active .navicon span:after {
+  top: 0; }
+
+.nav-active .navicon span:before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.nav-active .navicon span:after {
+  top: 10px;
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+  -ms-transform: translateY(-10px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg); }
+
+.nav-active .navicon span {
+  background-color: transparent; }
+
+.head-nav {
+  -webkit-transform: translateY(-200px);
+  -ms-transform: translateY(-200px);
+  transform: translateY(-200px);
+  -webkit-transition: all 0.25s cubic-bezier(0.82, 0.47, 0.61, 0.97);
+  transition: all 0.25s cubic-bezier(0.82, 0.47, 0.61, 0.97); }
+
+.nav-active .head-nav {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0); }
+
+.logo, .navicon {
+  -webkit-transition: all 0.25s cubic-bezier(0.82, 0.47, 0.61, 0.97);
+  transition: all 0.25s cubic-bezier(0.82, 0.47, 0.61, 0.97); }
+
+.no-touch header button, .no-touch .head-nav a, .logo i, .no-touch #specials button, .no-touch #contact button, .no-touch #pricing button {
+  -webkit-transition: background 0.15s linear 0s, color 0.15s linear 0s;
+  transition: background 0.15s linear 0s, color 0.15s linear 0s; }
+
+#image-gallery > li > figure > figcaption, #image-gallery img, .no-touch #image-gallery > li > figure > figcaption a {
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s; }
+
+.form-field {
+  -webkit-animation-duration: 0.85s;
+  animation-duration: 0.85s; }

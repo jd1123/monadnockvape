@@ -1,0 +1,374 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if lt IE 8]><html class="no-js no-support"><!--<![endif]-->
+<!--[if gte IE 8]><!--> <html lang="en-US" class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Monadnock Vapor</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="robots" content="noodp,noydir">
+        
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+        
+        <link rel="shortcut icon" href="/inc/img/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" href="{% static 'inc/img/apple-touch-icon.png'%}">
+        
+        
+        <!-- meta stuff - delete me please -->
+		<link rel="canonical" href="https://monadnockvapor.com">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="">
+		<meta property="og:description" content="">
+		<meta property="og:url" content="">
+		<meta property="og:image" content="souce here please">
+		<meta name="twitter:card" content="app">
+		<meta name="twitter:site" content="">
+		<meta name="twitter:description" content="">
+		<meta name="twitter:app:country" content="US">
+		<meta name="twitter:app:name:iphone" content="">
+		<meta name="twitter:app:id:iphone" content="">
+		<meta name="twitter:app:url:iphone" content="">
+		<meta name="twitter:app:name:ipad" content="">
+		<meta name="twitter:app:id:ipad" content="">
+		<meta name="twitter:app:url:ipad" content="">	
+		<!-- meta stuff - delete me please -->
+        
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'inc/css/normalize.css' %}">
+		<link rel="stylesheet" href="{% static 'inc/css/lightbox.css' %}">
+		<link rel="stylesheet" href="{% static 'inc/css/animate.css' %}">
+		<!--[if lte IE 8]>
+			<link rel="stylesheet" type="text/css" href="{% static 'inc/css/ie.css' %}" />
+		<![endif]-->
+		<link rel="stylesheet" href="{% static 'style.css' %}">
+		
+		<script src="{% static 'inc/js/modernizr.js' %}"></script><!-- update/customize build - delete comment -->
+		
+		<script src="{% static 'inc/js/conditionizr/conditionizr.js' %}"></script><!-- update to newest version + customize tests - delete comment -->
+		<script src="{% static 'inc/js/conditionizr/mac.js' %}"></script>
+		<script src="{% static 'inc/js/conditionizr/windows.js' %}"></script>
+		<script>
+			conditionizr.config({
+			    assets: '/assets/conditionizr/',
+			    tests: {
+				    'mac': ['class'],
+			        'windows': ['class']
+			    }
+			});
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry&signed_in=true"></script>
+	</head>
+	<body class="loading">
+		<!--[if lt IE 8]>
+			<div class="no-support">
+				<p>Your browser is <strong>out of date</strong>!</p>
+				<p><a href="http://browsehappy.com/">Upgrade your browser</a> to view this website.</p>
+				<p style="font-size: small;">Using an outdated browser is not only unsafe but it prevents you from viewing webpages the way they were intended to be viewed. Only a handful of people on earth are still using your web browser; don't let technology leave you behind. <a href="http://browsehappy.com/">Upgrade</a> your browser today to something modern, capable and safe!</p>
+			</div>
+		<!--<![endif]-->
+		<div id="overlay">
+			<div class="overlay-content">
+				<img src="{% static 'inc/img/load-img.png' %}">
+				<div id="loader" class="animated fadeIn">
+					<div id="scrubber" class="scrubber"></div>
+				</div>
+			</div>
+		</div>
+		<header data-scroll-index="0">
+			<div id="no-js-message">This website works best with JavaScript enabled!</div>
+			<div class="screen"></div>
+			<nav class="mobile-nav">
+				<a class="mobile-logo cf" href="#"><i class="fa fa-cloud fa-2x" style="float: left;"></i><div class="mobile-logo-text">MONADNOCK<span>VAPOR</span></div></a>
+				<ul class="mobile-links">
+					<li><a href="#">LOGIN</a></li>
+					<li><a data-scroll-goto="6">SIGN UP</a></li>
+					<li><a data-scroll-goto="7">LOCATIONS</a></li>
+					<li><a data-scroll-goto="8">CONTACT</a></li>
+				</ul>
+			</nav>
+			<nav class="head-nav cf">
+				<a href="#">LOGIN</a>
+				<a data-scroll-goto="6">SIGN UP</a>
+				<a data-scroll-goto="7">LOCATIONS</a>
+				<a data-scroll-goto="8">CONTACT</a>
+			</nav>
+			<a href="#" class="logo"><i class="fa fa-cloud fa-2x" style="float: left;"></i><div style="float:left;margin-left: 5px;">MONADNOCK<span>VAPOR</span></div></a>
+			<a class="navicon navToggle"><span></span></a>
+			<section>
+				<h1>Monadnock Vapor</h1>
+				<p>
+					Why smoke when you can vape?	
+				</p>
+				<button data-scroll-goto="4">CHECK IT OUT<i class="fa fa-arrow-down"></i></button>
+			</section>
+		</header>
+		<section id="about" class="wp1" data-scroll-index="1">
+			<div class="container">
+				<h2>Welcome to Monadnock Vapor</h2>
+				<p>For those of you that don't know, Monadnock Vapor is a chain of vapor stores in southern New Hampshire. We proudly serve the towns and surrounding areas of Keene and New Bethlehem. Our story is simple. Three guys who used to smoke got into vaping. We decided to open a store. One turned into two. We take our business seriously, and we aim to help people quit smoking and start vaping. We carry high quality products that we actually use. We hired a few very knowledgable and passionate people. We want to help you get everything you need to vape...locally.  </p>
+			</div>
+		</section>
+		<section id="images" data-scroll-index="2">
+			<div class="image-row">
+				<ul id="image-gallery" class="cf">
+					<li>
+						<figure>
+							<img src="{% static 'img/hats.jpg' %}">
+							<figcaption>
+								<a href="{% static 'img/hats.jpg' %}" class="image-gallery-link" data-lightbox="image-1" data-title="My caption">
+									<i class="fa fa-search-plus fa-3x"></i>
+									<p>IMAGE TITLE</p>
+								</a>	
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="{% static 'img/bumb.jpg' %}">
+							<figcaption>
+								<a href="#" class="image-gallery-link">
+									<i class="fa fa-search-plus fa-3x"></i>
+									<p>IMAGE TITLE</p>
+								</a>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="{% static 'img/pumpkin.jpg' %}">
+							<figcaption>
+								<a href="#" class="image-gallery-link">
+									<i class="fa fa-search-plus fa-3x"></i>
+									<p>IMAGE TITLE</p>
+								</a>
+							</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</div>
+			<div class="image-row">
+				<ul id="image-gallery" class="cf">
+					<li>
+						<figure>
+							<img src="{% static 'img/cuttwood.jpg' %}">
+							<figcaption>
+								<a href="#" class="image-gallery-link">
+									<i class="fa fa-search-plus fa-3x"></i>
+									<p>IMAGE TITLE</p>
+								</a>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="http://lorempixel.com/400/300/nature/5/">
+							<figcaption>
+								<a href="#" class="image-gallery-link">
+									<i class="fa fa-search-plus fa-3x"></i>
+									<p>IMAGE TITLE</p>
+								</a>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="http://lorempixel.com/400/300/nature/7/">
+							<figcaption>
+								<a href="#" class="image-gallery-link">
+									<i class="fa fa-search-plus fa-3x"></i>
+									<p>IMAGE TITLE</p>
+								</a>
+							</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section id="specials" class="wp2" data-scroll-index="3">
+			<div class="container">
+				<h2 class="wp2-1">What makes us rock?</h2>
+				<div id="dropdowns" class="cf">
+					<div class="dropdown wp2-2">
+						<div class="headline"><i class="fa fa-users"></i>Fully stocked shop</div>
+						<h4>We carry high quality products that we use.</h4>
+						<p>
+						Are you looking for a starter kit? We got you covered. Or are you into rebuildables on a 100-watt box? Yeah, we can help you out.
+						We carry a full selection of hardware and top shelf juices. 
+						</p>
+					</div>
+					<div class="dropdown wp2-3">
+						<div class="headline"><i class="fa fa-star-o"></i>Friendly Staff</div>
+						<h4>Come see our friendly staff.</h4>
+						<p>
+						Maybe you're like us and a serial vapist. Come on in and talk vapor with our friendly staff.
+						Or maybe you're just getting into vaping and want to learn more. No problem, we will educate you on how to get started and stay off analogs.
+						We're dedicated to our customers. Please, ask around. 
+						</p>
+					</div>
+					<div class="dropdown wp2-4">
+						<div class="headline"><i class="fa fa-cogs"></i>Try before you buy</div>
+						<h4>Try all of our juices in the store.</h4>
+						<p>
+						Taste is a personal thing, and who are we to tell you what you like? Try all of our flavors in the store to see if you'll like it.
+						We're pretty certain you'll find something that you'll like.
+						</p>
+					</div>
+				</div>
+				<button data-scroll-goto="4" class="cf wp2-5">SEE THE PROCESS<i class="fa fa-arrow-down"></i></button>
+			</div>
+		</section>
+<!--
+		<section id="video" data-scroll-index="4">
+			<div class="container">
+				<iframe src="http://player.vimeo.com/video/115935010?title=0&byline=0&portrait=0&color=6C7A89" width="1280" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+		</section>
+-->
+		<section id="clients" data-scroll-index="5">
+			<div class="container">
+				<h2>SECTION</h2>
+				<p>Content.</p>
+			</div>
+		</section>
+		<section id="pricing" data-scroll-index="6">
+			<div class="container">
+				<h2>PRICING</h2>
+				<p>Packages to fit every project & budget.</p>
+				<div id="packages" class="cf">
+					<div class="package">
+						<div class="title">MICRO</div>
+						<div class="details">
+							<div class="storage">3GB<span>STORAGE</span></div>
+							<div class="price">
+								<div class="left">$19.95<span>/month</span></div>
+								<div class="right">$215<span>/year</span></div>
+							</div>
+						</div>
+						<a href="#">SIGN UP</a>
+					</div>
+					<div class="package">
+						<div class="title">STANDARD</div>
+						<div class="details">
+							<div class="storage">5GB<span>STORAGE</span></div>
+							<div class="price">
+								<div class="left">$29.95<span>/month</span></div>
+								<div class="right">$335<span>/year</span></div>
+							</div>
+						</div>
+						<a href="#">SIGN UP</a>
+					</div>
+					<div class="package">
+						<div class="title">MEGA</div>
+						<div class="details">
+							<div class="storage">20GB<span>STORAGE</span></div>
+							<div class="price">
+								<div class="left">$39.95<span>/month</span></div>
+								<div class="right">$455<span>/year</span></div>
+							</div>
+						</div>
+						<a href="#">SIGN UP</a>
+					</div>
+					<div class="package">
+						<div class="title">MAX</div>
+						<div class="details">
+							<div class="storage">50GB<span>STORAGE</span></div>
+							<div class="price">
+								<div class="left">$59.95<span>/month</span></div>
+								<div class="right">$695<span>/year</span></div>
+							</div>
+						</div>
+						<a href="#">SIGN UP</a>
+					</div>
+				</div>
+				<button class="cf">FREE DEMO SIGNUP<i class="fa fa-arrow-right"></i></button>
+			</div>
+		</section>
+		<section id="map" class="wp3" data-scroll-index="7">
+				<div class="container cf">
+					<h2>LOCATIONS</h2>
+					<div class="tab-container">
+						<ul class="cf">
+							<li><a class="current tab1-input">Keene</a></li><!--
+							--><li><a class="tab2-input">New Bethlahem</a></li>
+						</ul>
+					</div>
+					<div class="tab1-content">
+						<div class="left">
+							<i class="fa fa-map-marker fa-2x"></i>
+							<p>34 1/2 Washington Street</p>
+							<p>Keene, NH 03431</p>
+						</div>
+						<div class="right">
+							<i class="fa fa-clock-o fa-2x"></i>
+							<p>Monday - Saturday 11am - 7pm</p>
+							<p>Sunday 12pm - 5pm</p>
+						</div>
+					</div>
+					<div class="tab2-content">
+						<div class="left">
+							<i class="fa fa-map-marker fa-2x"></i>
+							<p>Store 2</p>
+							<p>Store 2</p>
+						</div>
+						<div class="right">
+							<i class="fa fa-clock-o fa-2x"></i>
+							<p>Monday - Saturday 11am - 7pm</p>
+							<p>Sunday 12pm - 5pm</p>
+						</div>
+					</div>
+				</div>
+			<div class="map-container">	
+				<div id="map-canvas"></div>
+				<div id="map-canvas2" class="tab-map-hide"></div>
+			</div>
+		</section>
+		<section id="contact" class="wp4" data-scroll-index="8">
+			<div class="container">
+				<h2>GET IN TOUCH</h2>
+				<i class="fa fa-envelope-o fa-2x"></i>
+				<p>MONADNOCKVAPOR@GMAIL.COM</p>
+				<i class="fa fa-mobile fa-2x"></i>
+				<p>603 354 3168 - Keene</p>
+				<p>555 555 3000 - New Bethlehem</p>
+				<form id="contact-form">
+					<div id="form-fields">
+						<div id="form-overlay">
+							<i class="fa fa-circle-o-notch fa-spin"></i>
+						</div>
+						<input id="contact-form-name" class="form-field" type="text" name="name" placeholder="Name *">
+						<input id="contact-form-email" class="form-field" type="email" pattern="[^ @]*@[^ @]*" name="email" placeholder="Email *">
+						<textarea id="contact-form-message" class="form-field" name="message" placeholder="Message *" rows="6"></textarea>
+					</div>
+					<div id="contact-form-error">THERE WAS A PROBLEM, FIX IT</div>
+					<div id="contact-form-success">THANKS FOR YOUR MESSAGE, WE'LL GET BACK TO YOU AS SOON AS POSSIBLE</div>
+					<button id="contact-form-submit" class="cf" type="submit" value="submit" onclick="return false;">SEND MESSAGE<i class="fa fa-arrow-right"></i></button>
+				</form>
+			</div>
+		</section>
+		<footer>
+			<div class="container cf">
+				<div id="footer-left">
+					<a href="https://www.facebook.com/pages/Monadnock-Vapor/1455143341412596"><i class="fa fa-facebook fa-2x"></i></a>
+					<a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+					<a href="#"><i class="fa fa-vimeo-square fa-2x"></i></a>
+				</div>
+				<div id="footer-right">
+					MONADNOCK VAPOR &copy; 2015<span>34 1/2 WASHINGTON ST, KEENE, NH 03431</span><span>555 555 3000 | Mon-Sat: 11-7 Sun. 12-5</span>
+				</div>
+			</div>
+		</footer>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="{% static 'inc/js/jquery-1.11.2.min.js' %}"><\/script>')</script>
+		<script src="{% static 'inc/js/jquery.waypoints.min.js' %}"></script>
+		<script src="{% static 'inc/js/scrollIt.min.js'%}"></script>
+		<script src="{% static 'inc/js/jquery.fitvids.js'%}"></script>
+		<script src="{% static 'inc/js/lightbox.min.js'%}"></script>
+		<script src="{% static 'inc/js/google-map.js'%}"></script>
+		<script src="{% static 'inc/js/scripts.js'%}"></script>
+	</body>
+</html>

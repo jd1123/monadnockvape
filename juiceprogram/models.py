@@ -30,3 +30,4 @@ def default_customer():
 	c = Customer.objects.create(first_name='John', last_name='Doe', id_num=0, juices_purchased=0, juices_claimed=0)
 	c.save()
 
+

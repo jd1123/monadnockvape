@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Alphabetic List {% endblock %}
+
+{% block body_block %}
+
+<section class="home-top">
+<div class="inner">
+	
+	{% for l in letters %}
+		<a href="/juiceprogram/alphabetic_list/{{l}}/">{{l}}</a>
+	{% endfor %}
+	<br />	
+	<br />	
+	<p>
+	{% if custs %}
+		{% for c in custs %}
+		{{c.id_num}} -  <a href="{% url 'juiceprogram.views.user_view' c.id_num %}">{{c.first_name}} {{c.last_name}}</a>
+			<br />
+		{% endfor %}
+	{% else %}
+	Nothin here
+	{% endif %}
+	</p>
+	<br />
+	{% for l in letters %}
+		<a href="/juiceprogram/alphabetic_list/{{l}}/">{{l}}</a>
+	{% endfor %}
+
+</div>
+</section>
+
+{% endblock %}

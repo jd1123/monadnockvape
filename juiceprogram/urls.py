@@ -8,4 +8,5 @@ urlpatterns = patterns('',
 	url(r'^lookup/$', views.user_lookup, name='lookup'),
 	url(r'^user/(\d+)/$', views.user_view, name='user'),
 	url(r'^user_list/(\d+)/$', views.user_list, name='user_list'),
+	url(r'^alphabetic_list/([A-Z])/$', views.alphabetic_list, name='alphabetic_list'),
 )

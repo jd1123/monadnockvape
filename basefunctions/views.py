@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 def root(request):
     context = RequestContext(request)
     context_dict = {}
-    return render_to_response('index.html', context_dict, context)
+    return render_to_response('index2.html', context_dict, context)
 
 
 def about(request):

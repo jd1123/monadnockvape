@@ -85,15 +85,15 @@
 			<nav class="mobile-nav">
 				<a class="mobile-logo cf" href="#"><i class="fa fa-cloud fa-2x" style="float: left;"></i><div class="mobile-logo-text">MONADNOCK<span>VAPOR</span></div></a>
 				<ul class="mobile-links">
-					<li><a href="#">LOGIN</a></li>
-					<li><a data-scroll-goto="6">SIGN UP</a></li>
+					<li><a href="#">----</a></li>
+					<li><a data-scroll-goto="3">WHY MONADNOCK?</a></li>
 					<li><a data-scroll-goto="7">LOCATIONS</a></li>
 					<li><a data-scroll-goto="8">CONTACT</a></li>
 				</ul>
 			</nav>
 			<nav class="head-nav cf">
-				<a href="#">LOGIN</a>
-				<a data-scroll-goto="6">SIGN UP</a>
+				<a href="{% url 'basefunctions.views.user_login' %} ">LOGIN</a>
+				<a data-scroll-goto="3">WHY MONADNOCK?</a>
 				<a data-scroll-goto="7">LOCATIONS</a>
 				<a data-scroll-goto="8">CONTACT</a>
 			</nav>
@@ -110,7 +110,10 @@
 		<section id="about" class="wp1" data-scroll-index="1">
 			<div class="container">
 				<h2>Welcome to Monadnock Vapor</h2>
-				<p>For those of you that don't know, Monadnock Vapor is a chain of vapor stores in southern New Hampshire. We proudly serve the towns and surrounding areas of Keene and New Bethlehem. Our story is simple. Three guys who used to smoke got into vaping. We decided to open a store. One turned into two. We take our business seriously, and we aim to help people quit smoking and start vaping. We carry high quality products that we actually use. We hired a few very knowledgable and passionate people. We want to help you get everything you need to vape...locally.  </p>
+				<p>For those of you that don't know, Monadnock Vapor is a chain of vapor stores in southern New Hampshire. We proudly serve the towns and surrounding areas of Keene and New Bethlehem. Our story is simple. Three guys who used to smoke got into vaping. We decided to open a store. One turned into two. We take our business seriously, and we aim to help people quit smoking and start vaping. We carry high quality products that we actually use. We hired a few very knowledgable and passionate people. We want to help you get everything you need to vape...locally.
+				<br/><br/>
+				<h5><a data-scroll-goto="5">Check out our deals and promotions.</a></h5>
+				</p>
 			</div>
 		</section>
 		<section id="images" data-scroll-index="2">
@@ -120,9 +123,9 @@
 						<figure>
 							<img src="{% static 'img/hats.jpg' %}">
 							<figcaption>
-								<a href="{% static 'img/hats.jpg' %}" class="image-gallery-link" data-lightbox="image-1" data-title="My caption">
+								<a href="{% static 'img/hats.jpg' %}" class="image-gallery-link" data-lightbox="image-1" data-title="Monadnock threads">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>IMAGE TITLE</p>
+									<p>Threads</p>
 								</a>	
 							</figcaption>
 						</figure>
@@ -131,9 +134,9 @@
 						<figure>
 							<img src="{% static 'img/bumb.jpg' %}">
 							<figcaption>
-								<a href="#" class="image-gallery-link">
+								<a href="{% static 'img/bumb.jpg' %}" class="image-gallery-link" data-lightbox="image-2" data-title="Bumblefrog">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>IMAGE TITLE</p>
+									<p>Juices</p>
 								</a>
 							</figcaption>
 						</figure>
@@ -205,7 +208,7 @@
 						<div class="headline"><i class="fa fa-star-o"></i>Friendly Staff</div>
 						<h4>Come see our friendly staff.</h4>
 						<p>
-						Maybe you're like us and a serial vapist. Come on in and talk vapor with our friendly staff.
+						Maybe you're like us and a serial vapist. Come on in and talk vapor with us.
 						Or maybe you're just getting into vaping and want to learn more. No problem, we will educate you on how to get started and stay off analogs.
 						We're dedicated to our customers. Please, ask around. 
 						</p>
@@ -214,8 +217,8 @@
 						<div class="headline"><i class="fa fa-cogs"></i>Try before you buy</div>
 						<h4>Try all of our juices in the store.</h4>
 						<p>
-						Taste is a personal thing, and who are we to tell you what you like? Try all of our flavors in the store to see if you'll like it.
-						We're pretty certain you'll find something that you'll like.
+						Taste is a personal thing, and who are we to tell you what you like? Try all of our flavors in the store to see if you will like it.
+						We're pretty certain you'll find something that suites you.
 						</p>
 					</div>
 				</div>
@@ -231,10 +234,18 @@
 -->
 		<section id="clients" data-scroll-index="5">
 			<div class="container">
-				<h2>SECTION</h2>
-				<p>Content.</p>
+				<h2>Deals and promotions</h2>
+				<p>
+				Here are a few things you should know about our shop. Firstly, you buy 5 house juices, you get the sixth free. That's how it works. No gimmicks.
+				Leave your name at the store, and we'll keep track for you - no punchcards to remember. 
+				</p>
+				<p>
+				Secondly, when you refer a friend who makes a purchase of $15 or more, you get a free
+				house juice. Yep, that's all. It's a thank you for helping us out. We appreciate that.
+				</p>
 			</div>
 		</section>
+		<!--
 		<section id="pricing" data-scroll-index="6">
 			<div class="container">
 				<h2>PRICING</h2>
@@ -288,6 +299,7 @@
 				<button class="cf">FREE DEMO SIGNUP<i class="fa fa-arrow-right"></i></button>
 			</div>
 		</section>
+		-->
 		<section id="map" class="wp3" data-scroll-index="7">
 				<div class="container cf">
 					<h2>LOCATIONS</h2>

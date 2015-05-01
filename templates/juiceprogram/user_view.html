@@ -8,7 +8,8 @@
 	<form id="useredit" action="{% url 'juiceprogram.views.user_view' id_num %}" method="post">
 		{% csrf_token %}
 		<p><label class="bold">Juices Purchased:</label><input type="number" name="juices_claimed" value={{juices_purchased}}><br/>
-		<input type="submit" name="addjuice" Value="Add juice"><input type="submit" name="subjuice" Value="Sub juice"></p>
+		<input type="submit" name="addjuice" Value="Add juice"><input type="submit" name="subjuice" Value="Sub juice">
+		<input type="submit" name="editjuice" Value="Override juices"></p>
 		<p><label class="bold">Juices Claimed:</label>{{juices_claimed}}<br/>
 		<input type="submit" name="claim" Value="Claim"> </p>
 		<p><label class="bold">Eligible:</label>{{juices_eligible}}</p>

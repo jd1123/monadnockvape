@@ -110,7 +110,7 @@ function initialize() {
 		strokeWeight: 1
 	};
 
-	var contentString = '<div id="map-info-window">' + '<h1><a href="https://goo.gl/maps/xiSGp" target="_blank">Monadnock Vapor</a></h1><p>0000000</p><p>Keene, NH 000000</p><p><a href="https://goo.gl/maps/xiSGp" target="_blank">View on Google maps<a></p>' + '</div>';
+	var contentString = '<div id="map-info-window">' + '<h1><a href="https://goo.gl/maps/xiSGp" target="_blank">Monadnock Vapor</a></h1><p>34 1/2 Washington St.</p><p>Keene, NH		03431</p><p><a href="https://goo.gl/maps/xiSGp" target="_blank">View on Google maps<a></p>' + '</div>';
 
 	var infowindow = new google.maps.InfoWindow({//.gm-style-iw + div {display: none} to hide X (only if you disable other info windows!
 		content: contentString

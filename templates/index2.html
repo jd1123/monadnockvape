@@ -85,14 +85,14 @@
 			<nav class="mobile-nav">
 				<a class="mobile-logo cf" href="#"><i class="fa fa-cloud fa-2x" style="float: left;"></i><div class="mobile-logo-text">MONADNOCK<span>VAPOR</span></div></a>
 				<ul class="mobile-links">
-					<li><a href="#">----</a></li>
+					<li><a data-scroll-goto="1">ABOUT</a></li>
 					<li><a data-scroll-goto="3">WHY MONADNOCK?</a></li>
 					<li><a data-scroll-goto="7">LOCATIONS</a></li>
 					<li><a data-scroll-goto="8">CONTACT</a></li>
 				</ul>
 			</nav>
 			<nav class="head-nav cf">
-				<a href="{% url 'basefunctions.views.user_login' %} ">LOGIN</a>
+				<a data-scroll-goto="1">ABOUT</a>
 				<a data-scroll-goto="3">WHY MONADNOCK?</a>
 				<a data-scroll-goto="7">LOCATIONS</a>
 				<a data-scroll-goto="8">CONTACT</a>
@@ -110,7 +110,7 @@
 		<section id="about" class="wp1" data-scroll-index="1">
 			<div class="container">
 				<h2>Welcome to Monadnock Vapor</h2>
-				<p>For those of you that don't know, Monadnock Vapor is a chain of vapor stores in southern New Hampshire. We proudly serve the towns and surrounding areas of Keene and New Bethlehem. Our story is simple. Three guys who used to smoke got into vaping. We decided to open a store. One turned into two. We take our business seriously, and we aim to help people quit smoking and start vaping. We carry high quality products that we actually use. We hired a few very knowledgable and passionate people. We want to help you get everything you need to vape...locally.
+				<p>For those of you that don't know, Monadnock Vapor is a chain of vapor stores in southern New Hampshire. We proudly serve the towns and surrounding areas of Keene and New Lebanon. Our story is simple. Three guys who used to smoke got into vaping. We decided to open a store. One turned into two. We take our business seriously, and we aim to help people quit smoking and start vaping. We carry high quality products that we actually use. We hired a few very knowledgable and passionate people. We want to help you get everything you need to vape...locally.
 				<br/><br/>
 				To get the latest news, goings-on and new product info, please check out our <u><a href="#">facebook</a></u> site.
 				Also, see below for our all-the-time <u><a data-scroll-goto="5">deals and promotions.</a></u>
@@ -137,18 +137,18 @@
 							<figcaption>
 								<a href="{% static 'img/bumb.jpg' %}" class="image-gallery-link" data-lightbox="image-2" data-title="Bumblefrog">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>Juices</p>
+									<p>Bumblefrog</p>
 								</a>
 							</figcaption>
 						</figure>
 					</li>
 					<li>
 						<figure>
-							<img src="{% static 'img/pumpkin.jpg' %}">
+							<img src="{% static 'img/pumpkin.jpg' %}" >
 							<figcaption>
-								<a href="#" class="image-gallery-link">
+								<a href="{% static 'img/pumpkin.jpg' %}" class="image-gallery-link" data-lightbox="image-3" data-title="Monadnock Pumpkin">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>IMAGE TITLE</p>
+									<p>The Monadnock Pumpkin Festival</p>
 								</a>
 							</figcaption>
 						</figure>
@@ -159,33 +159,33 @@
 				<ul id="image-gallery" class="cf">
 					<li>
 						<figure>
-							<img src="{% static 'img/cuttwood.jpg' %}">
+							<img src="{% static 'img/cuttwood.png' %}" >
 							<figcaption>
-								<a href="#" class="image-gallery-link">
+								<a href="{% static 'img/cuttwood.png' %}" class="image-gallery-link" data-lightbox="image-4" data-title="Cutwood">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>IMAGE TITLE</p>
+									<p>Cutwood</p>
 								</a>
 							</figcaption>
 						</figure>
 					</li>
 					<li>
 						<figure>
-							<img src="http://lorempixel.com/400/300/nature/5/">
+							<img src="{% static 'img/juicebar.png' %}">
 							<figcaption>
-								<a href="#" class="image-gallery-link">
+								<a href="{% static 'img/juicebar.png' %}" class="image-gallery-link" data-lightbox="image-5" data-title="Keene Juice Bar">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>IMAGE TITLE</p>
+									<p>Keene Juice Bar</p>
 								</a>
 							</figcaption>
 						</figure>
 					</li>
 					<li>
 						<figure>
-							<img src="http://lorempixel.com/400/300/nature/7/">
+							<img src="{% static 'img/merch.png' %}">
 							<figcaption>
-								<a href="#" class="image-gallery-link">
+								<a href="{% static 'img/merch.png' %}" class="image-gallery-link" data-lightbox="image-6" data-title="ISticks galore!">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>IMAGE TITLE</p>
+									<p>ISticks</p>
 								</a>
 							</figcaption>
 						</figure>
@@ -307,7 +307,7 @@
 					<div class="tab-container">
 						<ul class="cf">
 							<li><a class="current tab1-input">Keene</a></li><!--
-							--><li><a class="tab2-input">New Bethlahem</a></li>
+							--><li><a class="tab2-input">New Lebanon</a></li>
 						</ul>
 					</div>
 					<div class="tab1-content">
@@ -343,11 +343,12 @@
 		<section id="contact" class="wp4" data-scroll-index="8">
 			<div class="container">
 				<h2>GET IN TOUCH</h2>
-				<i class="fa fa-envelope-o fa-2x"></i>
+				<a href="mailto:monadnockvapor@gmail.com"><i class="fa fa-envelope-o fa-2x"></i></a>
 				<p>MONADNOCKVAPOR@GMAIL.COM</p>
 				<i class="fa fa-mobile fa-2x"></i>
 				<p>603 354 3168 - Keene</p>
-				<p>555 555 3000 - New Bethlehem</p>
+				<p>555 555 3000 - New Lebanon</p>
+				<!--
 				<form id="contact-form" action="/" method="post">
 					{% csrf_token %}
 					<div id="form-fields">
@@ -362,6 +363,7 @@
 					<div id="contact-form-success">THANKS FOR YOUR MESSAGE, WE'LL GET BACK TO YOU AS SOON AS POSSIBLE</div>
 					<button id="contact-form-submit" class="cf" type="submit" value="submit">SEND MESSAGE<i class="fa fa-arrow-right"></i></button>
 				</form>
+				-->
 			</div>
 		</section>
 		<footer>

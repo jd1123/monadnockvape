@@ -5,3 +5,4 @@ settings.py
 *.pyc
 inventory/migrations/*
 jp.csv
+*.swo

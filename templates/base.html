@@ -43,9 +43,9 @@
 				<a href="{% url 'basefunctions.views.root' %}">Monadnock Vapor</a><p>why smoke when you can vape?</p>
 				<nav>
 					<ul>
-						<li><a href="{% url 'basefunctions.views.root' %}">Home</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Inventory</a></li>
+						<li><a href="{% url 'juiceprogram.views.index' %}">Home</a></li>
+						<li><a href="{% url 'juiceprogram.views.user_lookup' %}">Look up</a></li>
+						<li><a href="{% url 'juiceprogram.views.alphabetic_list' 'A' %}">List</a></li>
 					</ul>
 				</nav>
 			</div>	

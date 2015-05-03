@@ -4,14 +4,23 @@ from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 # Create your views here.
 
 
 # Home page
 def root(request):
-    context = RequestContext(request)
-    context_dict = {}
-    return render_to_response('index2.html', context_dict, context)
+	context = RequestContext(request)
+	context_dict = {}
+	if request.method == 'POST':
+		from_address = request.POST['email']
+		name = request.POST['name']
+		message = request.POST['message']
+		message = "From: " + name + " " + email + "\n" + message
+		send_mail('Contact Request', message, from_address, ['monadnockvapor@gmail.com'])
+		return render_to_response('index2.html', context_dict, context)
+	else:
+		return render_to_response('index2.html', context_dict, context)
 
 
 def about(request):

@@ -139,7 +139,7 @@ body {
   text-align: center; }
 
 header {
-  background: transparent url('inc/img/storefront.jpg') no-repeat center center/cover;
+  background: transparent url('../inc/img/storefront.jpg') no-repeat center center/cover;
   color: #fff;
   color: rgba(255, 255, 255, 0.5);
   position: relative;

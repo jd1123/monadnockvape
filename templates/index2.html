@@ -45,7 +45,7 @@
 		<!--[if lte IE 8]>
 			<link rel="stylesheet" type="text/css" href="{% static 'inc/css/ie.css' %}" />
 		<![endif]-->
-		<link rel="stylesheet" href="{% static 'style.css' %}">
+		<link rel="stylesheet" href="{% static 'newcss/style.css' %}">
 		
 		<script src="{% static 'inc/js/modernizr.js' %}"></script><!-- update/customize build - delete comment -->
 		
@@ -226,6 +226,7 @@
 				<button data-scroll-goto="4" class="cf wp2-5">SEE THE PROCESS<i class="fa fa-arrow-down"></i></button>
 			</div>
 		</section>
+		<!--
 		<section id="clients" data-scroll-index="5">
 			<div class="container">
 				<h2>Deals and promotions</h2>
@@ -242,6 +243,9 @@
 				</p>
 			</div>
 		</section>
+
+		-->
+		
 		<!--
 		<section id="pricing" data-scroll-index="6">
 			<div class="container">
@@ -344,7 +348,8 @@
 				<i class="fa fa-mobile fa-2x"></i>
 				<p>603 354 3168 - Keene</p>
 				<p>555 555 3000 - New Bethlehem</p>
-				<form id="contact-form">
+				<form id="contact-form" action="/" method="post">
+					{% csrf_token %}
 					<div id="form-fields">
 						<div id="form-overlay">
 							<i class="fa fa-circle-o-notch fa-spin"></i>
@@ -355,7 +360,7 @@
 					</div>
 					<div id="contact-form-error">THERE WAS A PROBLEM, FIX IT</div>
 					<div id="contact-form-success">THANKS FOR YOUR MESSAGE, WE'LL GET BACK TO YOU AS SOON AS POSSIBLE</div>
-					<button id="contact-form-submit" class="cf" type="submit" value="submit" onclick="return false;">SEND MESSAGE<i class="fa fa-arrow-right"></i></button>
+					<button id="contact-form-submit" class="cf" type="submit" value="submit">SEND MESSAGE<i class="fa fa-arrow-right"></i></button>
 				</form>
 			</div>
 		</section>

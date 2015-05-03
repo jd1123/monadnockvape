@@ -1,0 +1,1066 @@
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin box-sizing($box-size) {
+	-moz-box-sizing: $box-size;
+	-webkit-box-sizing: $box-size;
+	box-sizing: $box-size;
+}
+
+@mixin font-size($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+}
+
+@mixin font-opacity($color, $opacity) {
+	color: $color;
+	color: rgba($color, $opacity);
+}
+
+@mixin opacity($value){
+	$IEValue: $value*100;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+	filter: alpha(opacity=$IEValue);
+	-moz-opacity: $value;
+	-khtml-opacity: $value;
+	opacity: $value;
+}
+
+@mixin clear-forms() {
+	border: 0;
+	margin: 0;
+	outline: none;
+	padding: 0;
+}
+
+$font-stack: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$primary-color: #fff;
+$pop-color: #6C7A89;
+$font-dark: #8d8d8d;
+$breakpoint-small: 480px;
+$breakpoint-medium: 667px;
+$breakpoint-large: 769px;
+$breakpoint-xlarge: 992px;
+$breakpoint-max: 1100px;
+$background-light: #efefef;
+$background-dark: #595959;
+$placeholder-text-color: #cccccc;
+
+*, *:before, *:after {
+	@include box-sizing(border-box);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li, figure {
+	border: 0;
+	margin: 0; 
+	padding: 0;
+	font-weight: inherit;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+img {
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+	vertical-align: middle;
+}
+
+html {
+	@include box-sizing(inherit);
+	font-size: 100%;
+	line-height: 1;
+}
+
+html, body {
+	background-color: $primary-color;
+	font-family: $font-stack;
+	height: 100%;
+}
+
+body {
+	@include font-size(16px);
+	line-height: inherit;	
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+.no-support {
+	background: #fff;
+	font-family: sans-serif;
+	@include font-size(24px);
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	text-align: center;
+	z-index: 200;
+}
+
+.no-support p {
+	margin-left: 12.5%;
+	margin-right: 12.5%;
+}
+
+.no-support a {
+	color: blue;
+	text-decoration: underline;
+}
+
+.loading {
+	overflow: hidden;
+}
+
+#overlay {
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: $primary-color;
+	position: fixed;
+	z-index: 100;
+}
+
+.overlay-content {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	@include box-sizing(content-box);
+	padding-bottom: 81px;
+	position: absolute;
+	text-align: center;
+	height: 81px;
+	width: 80%;
+	@media only screen and (min-width : $breakpoint-small) {
+		width: 65%;
+	}
+	@media only screen and (min-width : $breakpoint-medium) {
+		width: 60%;
+	}
+	@media only screen and (min-width : $breakpoint-large) {
+		width: 55%;
+	}
+	@media only screen and (min-width : $breakpoint-xlarge) {
+		width: 50%;
+	}
+}
+
+.overlay-content img {
+	margin-bottom: 24px;
+}
+
+#loader {
+	background: $font-dark;
+	background: rgba($font-dark, 0.5);
+	height: 4px;
+	margin: auto;
+	width: 100%;
+}
+
+.scrubber {
+	background: $pop-color;
+	height: 4px;
+	width: 0;	
+}
+
+#no-js-message {
+	background: #e74c3c;
+	color: $primary-color;
+	display: none;
+	padding: 10px;
+	position: inherit;
+	z-index: 10;
+	text-align: center;
+}
+
+header {
+	background: transparent url('inc/img/storefront.jpg') no-repeat center center / cover;
+	@include font-opacity ($primary-color, 0.5);
+	position: relative;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+}
+
+header, body > section, h2, #contact button, #map-info-window h1, footer {
+	font-weight: 700;
+}
+
+.screen {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.25);
+	position: absolute;
+}
+
+.mobile-nav {
+	background: $pop-color;
+	color: $primary-color;
+	max-height: 56px;
+	overflow: hidden;
+	position: relative;
+	@media only screen and (min-width : $breakpoint-large) {
+		display: none;
+	}
+}
+
+.nav-active .mobile-nav {
+	max-height: 285px;
+}
+
+.mobile-logo {
+	display: inline-block;
+	padding: 12px;
+	position: inherit;
+	vertical-align: top;
+}
+
+.mobile-logo-text {
+	float:left;
+	margin-left: 5px;
+}
+
+.mobile-logo span, .logo span {
+	display: block;
+	letter-spacing: 2.5px;
+	margin-left: 2px;
+}
+
+.navicon {
+	cursor: pointer;
+	top: 0;
+	right: 0;
+	margin: 12px 18px 0 0;
+	padding: 10px 25px 16px 0px;
+	position: absolute;
+	@media only screen and (min-width : $breakpoint-small) {
+		padding-right: 35px;
+	}
+	@media only screen and (min-width : $breakpoint-large) {
+		margin: 24px 24px 0 0;
+		@include opacity(0.5);
+	}
+}
+
+.navicon span, .navicon span::before, .navicon span::after {
+    background: $primary-color;
+    border-radius: 1px;
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 5px;
+    @media only screen and (min-width : $breakpoint-small) {
+		width: 35px;    
+	}
+}
+
+.navicon span:before {
+    top: -10px
+}
+.navicon span:after {
+    bottom: -10px
+}
+
+.nav-active .navicon {
+	@media only screen and (min-width : $breakpoint-large) {
+		top: 85px;
+		position: fixed;
+	}
+}
+
+.mobile-links li {
+	border-bottom: 1px solid $primary-color;
+	border-bottom: 1px solid rgba($primary-color, 0.5);
+	@media only screen and (min-device-width : 300px) and (max-device-width : 675px) and (orientation : landscape) { 
+		border: none;
+		border-left: 1px solid $primary-color;
+		border-left: 1px solid rgba($primary-color, 0.5);
+		float: left;
+		width: 25%;
+	}
+}
+
+.mobile-links li:nth-child(1) {
+	border-top: 1px solid $primary-color;
+	border-top: 1px solid rgba($primary-color, 0.5);
+	@media only screen and (min-device-width : 300px) and (max-device-width : 675px) and (orientation : landscape) { 
+		border: none;
+	}
+}
+
+.mobile-links li a {
+	display: block;
+	padding: 15px;
+	@include font-size(13px);
+	@media only screen and (min-width : $breakpoint-small)  {
+		@include font-size(16px);
+		padding: 20px;	
+	}
+	@media only screen and (min-device-width : 300px) and (max-device-width : 675px) and (orientation : landscape) { 
+		@include font-size(13px);
+	}
+}
+
+.logo {
+	@include font-size(24px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	line-height: .85;
+	margin: 24px 0 0 24px;
+	display: none;
+	z-index: 2;
+	@media only screen and (min-width : $breakpoint-large) {
+		display: block;
+	}
+}
+
+.logo:hover i, .logo:focus i {
+	@include font-opacity($pop-color, 0.65);
+}
+
+.nav-active .logo {
+	top: 85px;
+}
+
+.head-nav {
+	background: $pop-color;
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100%;
+	padding: 24px 72px;
+	z-index: 2;
+	display: none;
+	@media only screen and (min-width : $breakpoint-large) {
+		display: block;
+		height: 85px;
+	}
+}
+
+.head-nav a {
+	color: $primary-color;
+	text-align: center;
+	padding: 10px;
+	width: 25%;
+	float: left;
+	@include font-size(14px);
+	border-right: 1px solid $primary-color;
+	border-right: 1px solid rgba($primary-color, 0.2);
+}
+
+.head-nav a:nth-child(1) {
+	border-left: 1px solid $primary-color;
+	border-left: 1px solid rgba($primary-color, 0.2);
+}
+
+.no-touch .head-nav a:hover, .no-touch .head-nav a:focus {
+	background: rgba($primary-color, 0.25);
+}
+
+header section {
+	position: absolute;
+	top: 35%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	padding: 0 24px;
+	@include font-opacity ($primary-color, 1.0);
+	width: 100%;
+	max-width: 425px;
+	max-height: 175px;
+	@media only screen and (min-width : $breakpoint-small) {
+		margin-left: 50px;
+		padding: 0;
+	}
+	@media only screen and (min-width : $breakpoint-large) {
+		margin-left: 20%;
+		max-width: 500px;
+		top: 0;
+	}
+}
+
+header section h1 {
+	@include font-size(24px);
+	letter-spacing: 1px;
+	line-height: 1;
+	@media only screen and (min-width : $breakpoint-medium) {
+			@include font-size(32px);
+	}
+	@media only screen and (min-width : $breakpoint-large) {
+		@include font-size(36px);	
+	}
+}
+
+header section p {
+	@include font-size(12px);
+	line-height: 1.75;
+	margin: 12px 0;
+	@media only screen and (min-width : $breakpoint-medium) {
+		margin: 24px 0;	
+	}
+	@media only screen and (min-width : $breakpoint-large) {
+		line-height: 2;
+		margin: 36px 0;	
+	}
+}
+
+button {
+	border: none;
+	outline: none;
+	background: $primary-color;
+	@include font-size(14px);
+	color: $pop-color;
+	padding: 18px 75px 18px 25px;
+	letter-spacing: 1px;
+	position: relative;
+}
+
+button i {
+	position: absolute;
+	top: 18px;
+	right: 15px;
+}
+
+.no-touch header button:hover, .no-touch header button:focus {
+	background: $pop-color;
+	color: $primary-color;
+}
+
+body > section {
+	color: $font-dark;
+	padding: 75px 0;
+	text-align: center;
+	@media only screen and (min-width : $breakpoint-xlarge) {
+		padding: 100px 0;
+	}
+}
+
+.container {
+	padding: 0 24px;
+	@media only screen and (min-width : $breakpoint-medium) {
+		padding: 0 50px;	
+	}
+	@media only screen and (min-width : $breakpoint-xlarge) {
+		padding: 0 100px;
+	}
+	@media only screen and (min-width : $breakpoint-xlarge) {
+		max-width: $breakpoint-max;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.container p {
+	@include font-size(12px);
+	line-height: 2.25;
+	margin: 25px 0 0 0;
+	@media only screen and (min-width : $breakpoint-large) {
+		margin: 50px 0 0 0;
+	}
+}
+
+.container > .left, .container > .right {
+	@media only screen and (min-width : $breakpoint-large) {
+		float: left;
+		margin-top: 25px;
+		margin-bottom: 25px;
+		width: 50%;	
+	}
+}
+
+h2 {
+	color: $pop-color;
+	@include font-size(18px);
+	letter-spacing: 1px;
+	line-height: 1;
+	@media only screen and (min-width : $breakpoint-small) {
+		@include font-size(20px);
+	}
+	@media only screen and (min-width : $breakpoint-medium) {
+		@include font-size(25px);
+	}
+	@media only screen and (min-width : $breakpoint-max) {
+		@include font-size(26px);
+	}	
+}
+
+#clients {
+	background-color: rgba($pop-color, 0.1);
+}
+
+#map {
+	padding-bottom: 0;
+	background-color: rgba($pop-color, 0.1);
+	border-bottom: 2px solid $pop-color;
+}
+
+#map > .container, #contact {
+	letter-spacing: 2px;
+}
+
+#map > .container > h2 {
+	margin-bottom: 25px;
+	@media only screen and (min-width : $breakpoint-large) {
+		margin: 0;
+	}
+}
+
+#map i, #contact .container > i {
+	display: block;
+	padding-top: 25px;
+}
+
+#map .container p, #contact p {
+	@include font-size(14px);
+	margin: 10px 0 0 0;
+	line-height: 1.5;
+}
+
+#map-canvas, #map-canvas2 {
+	background: $pop-color;
+	width: 100%;
+	height: 500px;
+	margin-top: 50px;
+}
+
+#map-info-window {
+	padding: 10px;
+	color: $font-dark;
+}
+
+#map-info-window h1 {
+	@include font-size(16px);
+	margin-bottom: 3px;
+	text-transform: uppercase;
+}
+
+#map-info-window p {
+	margin-top: 2px;
+}
+
+#map-info-window p a {
+	color: blue;
+	text-decoration: underline;
+	@include font-size(12px);
+}
+
+#video {
+	background-color: $pop-color;
+	padding: 0;
+}
+
+#video .container {
+	padding: 0;
+	margin: 0 auto;
+}
+
+#images {
+	padding: 0;
+	z-index: 1;
+	position: relative;
+}
+
+#image-gallery {
+	background: $background-light;
+	width: 100%;
+}
+
+#image-gallery img {
+	height: 100%;
+	width: 100%;
+}
+
+#image-gallery > li {
+	width: 100%;
+	min-height: 100%;
+	@media only screen and (min-width : $breakpoint-medium) {
+		float: left;
+		width: 33.3333%;
+	}
+}
+
+#images > .image-row:nth-of-type(2) {
+	display: none;
+	@media only screen and (min-width : $breakpoint-large) {
+		display: block;	
+	}
+}
+
+#image-gallery > li > figure {
+	overflow: hidden;
+	position: relative;
+}
+
+#image-gallery > li > figure > figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 25% 0;
+	background-color: rgba($pop-color, 0.5);
+	width: 100%;
+	height: 100%;
+	color: $primary-color;
+	@include font-size(12px);
+	@include opacity(1);
+	@media only screen and (min-width : $breakpoint-medium) {
+		@include opacity(0);
+	}
+}
+
+.no-touch #image-gallery > li > figure:hover figcaption a {
+	margin-top: 0;
+}
+
+.no-touch #image-gallery > li > figure > figcaption a {
+	display: inline-block;
+	@media only screen and (min-width : $breakpoint-medium) {
+		margin-top: -40px;
+	}
+}
+
+#image-gallery > li > figure > figcaption p {
+	margin-top: 15px;
+}
+
+.no-touch #image-gallery > li > figure:hover figcaption, #image-gallery > li > figure:focus figcaption {
+	@include opacity(1);
+}
+
+.no-touch #image-gallery > li > figure:hover img {
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+#pricing > .container {
+	padding:0 24px 0 14px;
+	@media only screen and (min-width : $breakpoint-large) {
+		padding:0 24px 0 4px;
+	}
+	@media only screen and (min-width : $breakpoint-large) {
+		padding:0 50px 0 20px;
+	}
+	@media only screen and (min-width : $breakpoint-xlarge) {
+		padding:0 100px 0 80px;
+	}
+}
+
+#pricing #packages {
+	margin-bottom: 50px;
+}
+
+#packages .package {
+	margin-top: 50px;
+	text-align: left;
+	float: left;
+	width: 50%;
+	padding-left: 10px;
+	@include font-size(14px);
+	@media only screen and (min-width : $breakpoint-medium) {
+		padding-left: 20px;
+	}
+	@media only screen and (min-width : $breakpoint-large) {
+		padding-left: 30px;
+	}
+	@media only screen and (min-width : $breakpoint-xlarge) {
+		padding-left: 20px;
+		width: 25%;
+	}
+}
+
+#packages .package > .title {
+	background: $pop-color;
+	display: block;
+	color: $primary-color;
+	padding: 15px;
+}
+
+#packages .package > .details {
+	background: $background-light;
+	padding: 15px;
+}
+
+#packages .package > .details > .storage {
+	@include font-size(16px);
+	margin-bottom: 10px;
+}
+
+#packages .package > .details > .storage > span {
+	@include font-size(11px);
+}
+
+#packages .package > .details > .price span {
+	@include font-size(11px);
+}
+
+#packages .package > a {
+	display: block;
+	padding: 15px;
+	color: $primary-color;
+	background: #e3a058;
+	text-align: center;
+	@include font-size(12px);
+}
+
+#contact > .container > h2  {
+	margin-bottom: 25px;
+}
+
+#specials .container {
+	overflow: hidden;
+	@media only screen and (min-width : $breakpoint-large) {
+		padding: 0 35px;	
+	}
+	@media only screen and (min-width : $breakpoint-xlarge) {
+		padding: 0 75px;
+	}
+}
+
+#specials #dropdowns {
+	margin-bottom: 50px;
+}
+
+#specials .dropdown {
+	margin-top: 50px;
+	text-align: left;
+	@media only screen and (min-width : $breakpoint-large) {
+		float: left;
+		padding: 0 15px;
+		width: 33.3333%;
+	}
+	@media only screen and (min-width : $breakpoint-xlarge) {
+		padding: 0 25px;
+	}
+}
+
+#specials .dropdown > .headline {
+	background: $background-light;
+	display: block;
+	color: $pop-color;
+	@include font-size(14px);
+	margin-bottom: 15px;
+}
+
+#specials .dropdown > .headline i {
+	margin-right: 15px;
+	display: inline-block;
+	background: $pop-color;
+	color: $primary-color;
+	padding: 15px;
+	@include font-size(16px);
+}
+
+#specials .dropdown p {
+	margin-top: 25px;
+}
+
+h4 {
+	color: $pop-color;
+}
+
+#specials button, #contact button, #pricing button {
+	background: $pop-color;
+	color: $primary-color;
+	display: block;
+	width: 100%;
+	@media only screen and (min-width : $breakpoint-medium) {
+		width: 60%;
+		margin-left: 20%;
+	}
+	@media only screen and (min-width : $breakpoint-large) {
+		width: 50%;
+		margin-left: 25%;
+	}
+	@media only screen and (min-width : $breakpoint-xlarge) {
+		width: 30%;
+		margin-left: 35%;
+	}
+}
+
+.no-touch #specials button:hover, .no-touch #contact button:hover, .no-touch #pricing button:hover {
+	background: $background-light;
+	color: $pop-color;
+}
+
+#contact-form {
+	display: block;
+	font-weight: 400;
+	margin-top: 50px;
+}
+
+#form-fields {
+	position: relative;
+}
+
+#form-overlay {
+	width: 100%;
+	height: 100%;
+	background-color: rgba($pop-color, 0.5);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: none;
+}
+
+#form-overlay i {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	height: 24px;
+	width: 24px;
+	@include font-size(24px);
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+}
+
+::-webkit-input-placeholder {color: $placeholder-text-color;}
+:-moz-placeholder {color: $placeholder-text-color;}
+::-moz-placeholder {color: $placeholder-text-color;}
+:-ms-input-placeholder {color: $placeholder-text-color;}
+
+.form-field {
+	@include clear-forms();
+	border: 1px solid transparent;
+	display: block;
+	border-radius: 2px;
+	background: rgba($pop-color, 0.1);
+	width: 100%;
+	@include font-size (14px);
+	padding: 10px;
+	margin-bottom: 25px;
+	line-height: 1.5;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.form-field-error {
+	border-color: #ff9999;
+}
+
+#contact-form-error {
+	background: #e35858;
+}
+
+#contact-form-success {
+	background: #2ECC71;
+}
+
+#contact-form-error, #contact-form-success {
+	color: $primary-color;
+	padding: 15px;
+	@include font-size(12px);
+	line-height: 1.5;
+	letter-spacing: 0;
+	margin-bottom: 25px;
+	font-weight: 700;
+	display: none;
+}
+
+footer {
+	background-color: $pop-color;
+	color: $primary-color;
+	@include font-size(14px);
+	padding: 40px 0;
+	text-align: center;
+	@media only screen and (min-width : $breakpoint-large) {
+		text-align: start;	
+	}
+}
+
+footer .container {
+	padding: 0 20px;
+	@media only screen and (min-width : $breakpoint-large) {
+		padding: 0 40px;	
+	}
+
+}
+
+footer span {
+	display: block;
+	@include font-size(11px);
+	font-weight: 600;
+	margin-top: 5px;
+}
+
+#footer-left {
+	margin-bottom: 25px;
+	@media only screen and (min-width : $breakpoint-large) {
+		float: right;
+		margin: 0;
+	}
+}
+
+#footer-right {
+	@media only screen and (min-width : $breakpoint-large) {
+		float: left;
+	}
+}
+
+footer a {
+	display: inline-block;
+}
+
+footer a:nth-of-type(2) {
+	margin: 0 15px;
+}
+
+.tab-container {
+	margin-top: 25px;
+	
+	> ul {
+		
+		> li {
+			display: inline-block;
+			
+			> a {
+				background: #efefef;
+				border: 1px solid #6C7A89;
+				color: #6C7A89;
+				display: block;
+				letter-spacing: 0;
+				font-size: 13px;
+				min-width: 200px;
+				padding: 18px 25px 18px 25px;
+			}
+			
+			a.current {
+				background: #6C7A89;
+				color: #fff;
+				pointer-events: none;
+			}
+			
+		}
+		
+	}
+	
+}
+
+.tab2-content {
+	display: none;
+}
+
+.tab-map-hide {
+	@include opacity(0);
+	visibility: hidden;
+}
+
+.map-container {
+	position: relative;
+	height: 500px;
+	width: 100%;
+	margin-top: 50px;
+}
+
+#map-canvas, #map-canvas2 {
+	position: absolute;
+	margin-top: 0;
+}
+
+
+@import 'animate';
+
+// waypoint styles
+
+.cssanimations .wp2-1, .cssanimations .wp2-2, .cssanimations .wp2-3, .cssanimations .wp2-4, .cssanimations .wp2-5 {
+	visibility: hidden;
+}
+
+.cssanimations .fadeIn, .cssanimations .fadeInDown, .cssanimations .fadeInDownBig, .cssanimations .fadeInLeft, .cssanimations .fadeInRight, .cssanimations .fadeInUp, .cssanimations .fadeInUpBig {
+	visibility: visible;
+}
+
+// No Javascript Rules
+
+.no-js #overlay {
+	display: none;
+}
+
+.no-js .loading {
+	overflow: auto;
+}
+
+.no-js #no-js-message {
+	display: block;
+}
+
+.no-js .navicon {
+	display: none;
+}
+
+.no-js .mobile-nav {
+	display: block;
+	max-height: none;
+}
+
+.no-js .mobile-links {
+	border-top: 1px solid $primary-color;
+	border-top: 1px solid rgba($primary-color, 0.5);
+	@include font-size(14px);
+}
+
+.no-js .mobile-links li {
+	border: none;
+	float: left;
+	width: 25%;
+}
+
+.no-js .mobile-links li a {
+	padding: 21px 5px;
+	text-align: center;
+}
+
+.no-js .logo {
+	display: none;
+}
+
+.no-js .head-nav {
+	display: none;
+}
+
+//remove loading page
+#overlay {
+	display: none;
+}
+
+.loading {
+	overflow: auto;
+}

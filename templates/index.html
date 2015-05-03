@@ -1,53 +1,7 @@
 {% extends 'base.html' %}
-{% load static %}
-
-{% block title %} Welcome! {% endblock %}
-
 {% block body_block %}
-
-
-		<section class="home-top">
-			<div class="inner">
-				<h1>Welcome To Our Store!</h1>
-				<figure>
-				    <!--	<img src="http://dummyimage.com/623x260/4ec4e4/fff"> -->
-				    <a href="{% url 'basefunctions.views.contact' %}"><img src="{% static 'img/front.jpg' %}"></a>
-				</figure>	
-				<p class="outline">
-				Geez, it's been about two months since we updated this site! Thank you everyone for your patronage. <br><br>
-				Since opening the store, we've been stocking more and more items. 
-				We now have a bunch of premium juices including favorites such as Mother's Milk and Claim Your Throne. 
-				We have some other flavors that customers at the store got to try and loved such as Summertime by VV Vapes. 
-				<br><br>
-				We also have some new equipment that we like so much, we had to buy some of it ourselves.
-				Mark is chasing clouds with his <a href="http://monadnockvapor.com/c/Mods/VV-VW/Sigelei_30W_Tube/">
-				Sigelei 30w tube</a>. Dan is sub-ohming on his 
-				<a href="http://monadnockvapor.com/c/Clearomizers-Tanks-RDAs/Rebuildable/Stillare_Clone/">
-				Stillare clone</a>. I personally can't put down my new 
-				<a href="http://monadnockvapor.com/c/Mods/VV-VW/Sigelei_50w_Box_Mod/">50w Sigelei box mod</a> topped with a Stillare. 
-				 <br><br>
-				Come check out our new flavors and equipment. Bring your favorite mod, blow some plumes and come hang out!
-				</p>
-				<br>
-				<p class="no-margin-bottom">Through quality merchandise and customer service, our mission is to give smokers a better alternative to tobacco, while also fulfilling the needs of the vaping enthusiast.  
-				</p><br />
-			</div>	
-		</section>
-		<section class="home-bot">
-			<div class="inner cf">
-				<div class="col">
-					<h1>Products</h1>
-						<figure><a href="{% url 'inventory.views.category_list' %}"><img src="{% static 'img/mvp.png' %}"></a></figure>
-						<p>We sell a full range of personal vaporizer, juices, batteries, cartomizers and many other accessories.</p>
-						<a href="{% url 'inventory.views.category_list' %}"><span class="button">View our complete Inventory</span></a>
-				</div>
-				<div class="col">
-					<h1>Deals</h1>
-					<span class="deal"><h3>Plume-Master Deluxe:</h3>Buy 5 bottles of juice and recieve the 6th free! (email registration required, house brand)</span>
-					<span class="deal"><h3>Refer a friend:</h3>refer a purchase of $15 or more and get a free 10ml bottle of juice!</span>
-				</div>
-			</div>
-
-		</section>
-
+<center>
+	<p<h4>Site down for maintenence</h4></p>
+	<p><a href="/contact">Contact info</a></p>
+</center>
 {% endblock %}

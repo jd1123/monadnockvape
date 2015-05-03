@@ -32,7 +32,7 @@ def create(request):
                 juices_claimed = request.POST['claimed']
                 ## Check if customer exists
                 print "Checking customer"
-                if len(Customer.objects.filter(first_name=fname, last_name=lname)) == 0:
+                if len(Customer.objects.filter(first_name__iexact=fname, last_name__iexact=lname)) == 0:
                     print "creating customer"
                     c = new_customer(fname, lname, juices_purchased, juices_claimed)
                     context_dict["created"]=True
@@ -173,11 +173,11 @@ def user_lookup(request):
 		if id_num != '':
 			custs=Customer.objects.all().filter(id_num = id_num)
 		elif lname != '':
-                    custs = Customer.objects.all().filter(last_name = lname)
+                    custs = Customer.objects.all().filter(last_name__iexact = lname)
                     if fname != '':
                             custs.filter(first_name = fname)
 		elif fname != '':
-		    custs = Customer.objects.all().filter(first_name = fname)
+		    custs = Customer.objects.all().filter(first_name__iexact = fname)
 		else:
 		    custs = []
 	

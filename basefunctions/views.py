@@ -12,7 +12,8 @@ from django.core.mail import send_mail
 def root(request):
 	context = RequestContext(request)
 	context_dict = {}
-	if request.method == 'POST':
+	'''
+        if request.method == 'POST':
 		from_address = request.POST['email']
 		name = request.POST['name']
 		message = request.POST['message']
@@ -20,7 +21,8 @@ def root(request):
 		send_mail('Contact Request', message, from_address, ['monadnockvapor@gmail.com'])
 		return render_to_response('index2.html', context_dict, context)
 	else:
-		return render_to_response('index2.html', context_dict, context)
+        '''
+	return render_to_response('index2.html', context_dict, context)
 
 
 def about(request):

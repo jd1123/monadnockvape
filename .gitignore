@@ -6,3 +6,4 @@ settings.py
 inventory/migrations/*
 jp.csv
 *.swo
+user_data

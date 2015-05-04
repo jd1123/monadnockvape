@@ -127,33 +127,33 @@
 				<ul id="image-gallery" class="cf">
 					<li>
 						<figure>
-							<img src="{% static 'img/hats.jpg' %}">
+							<img src="{{ images.0.0 }}">
 							<figcaption>
-								<a href="{% static 'img/hats.jpg' %}" class="image-gallery-link" data-lightbox="image-1" data-title="Monadnock threads">
+								<a href="{{ images.0.0  }}" class="image-gallery-link" data-lightbox="image-1" data-title="{{ images.0.1 }}">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>Threads</p>
+									<p>{{ images.0.1 }}</p>
 								</a>	
 							</figcaption>
 						</figure>
 					</li>
 					<li>
 						<figure>
-							<img src="{% static 'img/mechs.png' %}">
+							<img src="{{ images.1.0  }}">
 							<figcaption>
-								<a href="{% static 'img/mechs.png' %}" class="image-gallery-link" data-lightbox="image-2" data-title="Mechs">
+								<a href="{{ images.1.0  }}" class="image-gallery-link" data-lightbox="image-2" data-title="{{ images.1.1 }}">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>Mech Mods!</p>
+									<p>{{ images.1.1 }}</p>
 								</a>
 							</figcaption>
 						</figure>
 					</li>
 					<li>
 						<figure>
-							<img src="{% static 'img/westleb.png' %}" >
+							<img src="{{ images.2.0  }}" >
 							<figcaption>
-								<a href="{% static 'img/westleb.png' %}" class="image-gallery-link" data-lightbox="image-3" data-title="West Leb">
+								<a href="{{ images.2.0  }}" class="image-gallery-link" data-lightbox="image-3" data-title="{{ images.2.1 }}">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>Our West Leb location</p>
+									<p>{{ images.2.1 }}</p>
 								</a>
 							</figcaption>
 						</figure>
@@ -164,33 +164,70 @@
 				<ul id="image-gallery" class="cf">
 					<li>
 						<figure>
-							<img src="{% static 'img/squarevape.png' %}" >
+							<img src="{{ images.3.0  }}" >
 							<figcaption>
-								<a href="{% static 'img/squarevape.png' %}" class="image-gallery-link" data-lightbox="image-4" data-title="Square Vape">
+								<a href="{{ images.3.0  }}" class="image-gallery-link" data-lightbox="image-4" data-title="{{ images.3.1 }}">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>Square Vape</p>
+									<p>{{ images.3.1 }}</p>
 								</a>
 							</figcaption>
 						</figure>
 					</li>
 					<li>
 						<figure>
-							<img src="{% static 'img/juicebar.png' %}">
+							<img src="{{ images.4.0  }}">
 							<figcaption>
-								<a href="{% static 'img/juicebar.png' %}" class="image-gallery-link" data-lightbox="image-5" data-title="Keene Juice Bar">
+								<a href="{{ images.4.0  }}" class="image-gallery-link" data-lightbox="image-5" data-title="{{ images.4.1 }}">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>Keene Juice Bar</p>
+									<p>{{ images.4.1 }}</p>
 								</a>
 							</figcaption>
 						</figure>
 					</li>
 					<li>
 						<figure>
-							<img src="{% static 'img/merch.png' %}">
+							<img src="{{ images.5.0  }}">
 							<figcaption>
-								<a href="{% static 'img/merch.png' %}" class="image-gallery-link" data-lightbox="image-6" data-title="ISticks galore!">
+								<a href="{{ images.5.0  }}" class="image-gallery-link" data-lightbox="image-6" data-title="{{ images.5.1 }}">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>ISticks</p>
+									<p>{{ images.5.1 }}</p>
+								</a>
+							</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</div>
+			<div class="image-row">
+				<ul id="image-gallery" class="cf">
+					<li>
+						<figure>
+							<img src="{{ images.6.0  }}" >
+							<figcaption>
+								<a href="{{ images.6.0  }}" class="image-gallery-link" data-lightbox="image-4" data-title="{{ images.6.1 }}">
+									<i class="fa fa-search-plus fa-3x"></i>
+									<p>{{ images.6.1 }}</p>
+								</a>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="{{ images.7.0  }}">
+							<figcaption>
+								<a href="{{ images.7.0  }}" class="image-gallery-link" data-lightbox="image-5" data-title="{{ images.7.1 }}">
+									<i class="fa fa-search-plus fa-3x"></i>
+									<p>{{ images.7.1 }}</p>
+								</a>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="{{ images.8.0  }}">
+							<figcaption>
+								<a href="{{ images.8.0  }}" class="image-gallery-link" data-lightbox="image-6" data-title="{{ images.8.1 }}">
+									<i class="fa fa-search-plus fa-3x"></i>
+									<p>{{ images.8.1 }}</p>
 								</a>
 							</figcaption>
 						</figure>

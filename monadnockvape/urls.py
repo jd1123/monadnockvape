@@ -6,6 +6,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'basefunctions.views.root', name='home'),
+    url(r'^m/$', 'basefunctions.views.mosiac', name = 'login'),
     #url(r'^about/$', 'basefunctions.views.about', name = 'about'),
     #url(r'^contact/$', 'basefunctions.views.contact', name = 'contact'),
     url(r'^login/$', 'basefunctions.views.user_login', name = 'login'),

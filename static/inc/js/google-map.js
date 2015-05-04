@@ -117,18 +117,33 @@ function initialize() {
 		content: contentString
 	});
 
+	var infowindow2 = new google.maps.InfoWindow({//.gm-style-iw + div {display: none} to hide X (only if you disable other info windows!
+		content: contentString2
+	});
+
 	var marker = new google.maps.Marker({
 		position: myLatlng,
 		icon: markerIcon,
 		map: map,
 		title: 'Monadnock Vapor'
 	});
+
   
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.open(map,marker);
 	});
 	infowindow.open(map,marker);//always show infowindow
   
+	var marker2 = new google.maps.Marker({
+		position: myLatlng2,
+		icon: markerIcon,
+		map: map2,
+		title: 'Monadnock Vapor: West Leb'
+	});
+
+	google.maps.event.addListener(marker2, 'click', function() {
+		infowindow2.open(map2, marker2);
+	});
   
 }
 // google.maps.event.addDomListener(window, 'resize', initialize); //jQuery function is smoother

@@ -3,15 +3,31 @@ from django.contrib import admin
 
 # Create your models here.
 class IndexImage(models.Model):
-    image = models.ImageField(upload_to = "static/img/")
-    caption = models.CharField(max_length = 40)
+    image_name = models.CharField(max_length = 40)
+    image = models.ImageField(upload_to = "static/user_data/")
+    caption = models.CharField(max_length = 140)
+
+    def __unicode__(self):
+        return self.caption
 
 class IndexImageAdmin(admin.ModelAdmin):
     list_display = ['image', 'caption']
 
 
 class IndexMosiac(models.Model):
-    image1 = models.ForeignKey(IndexImage)
+    mosiac_name = models.CharField(max_length = 50, default="my_mosiac")
+    image1 = models.ForeignKey(IndexImage, related_name='image1')
+    image2 = models.ForeignKey(IndexImage, related_name='image2')
+    image3 = models.ForeignKey(IndexImage, related_name='image3')
+    image4 = models.ForeignKey(IndexImage, related_name='image4')
+    image5 = models.ForeignKey(IndexImage, related_name='image5')
+    image6 = models.ForeignKey(IndexImage, related_name='image6')
+    image7 = models.ForeignKey(IndexImage, related_name='image7')
+    image8 = models.ForeignKey(IndexImage, related_name='image8')
+    image9 = models.ForeignKey(IndexImage, related_name='image9')
+
+    def __unicode__(self):
+        return "IndexMosiac"
 
 class IndexMosiacAdmin(admin.ModelAdmin):
-    list_display = ['image1']
+    list_display = ['mosiac_name']

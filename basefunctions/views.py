@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
+from basefunctions.models import IndexMosiac, IndexImage
 # Create your views here.
 
 
@@ -22,8 +23,30 @@ def root(request):
 		return render_to_response('index2.html', context_dict, context)
 	else:
         '''
+	index_mosiac = IndexMosiac.objects.all()[0]
+	field_names = sorted(index_mosiac._meta.get_all_field_names())
+	images = []
+	for f in field_names:
+		if f.find('id') == -1 & f.find('name')==-1:
+			print f, getattr(index_mosiac, f).image
+			images.append((getattr(index_mosiac, f).image, getattr(index_mosiac, f).caption))
+
+	context_dict['images'] = images
 	return render_to_response('index2.html', context_dict, context)
 
+def mosiac(request):
+	context = RequestContext(request)
+	context_dict = {}
+	index_mosiac = IndexMosiac.objects.all()[0]
+	field_names = index_mosiac._meta.get_all_field_names()
+	images = []
+	for f in field_names:
+		if f.find('id') == -1:
+			images.append(getattr(index_mosiac, f).image)
+
+	context_dict['images'] = images
+
+	return render_to_response('mosiac.html', context_dict, context)
 
 def about(request):
     context = RequestContext(request)

@@ -144,7 +144,7 @@ function initialize() {
 	google.maps.event.addListener(marker2, 'click', function() {
 		infowindow2.open(map2, marker2);
 	});
-  
+	infowindow2.open(map2,marker2);//always show infowindow
 }
 // google.maps.event.addDomListener(window, 'resize', initialize); //jQuery function is smoother
 google.maps.event.addDomListener(window, 'load', initialize);

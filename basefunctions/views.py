@@ -15,26 +15,21 @@ from django.views.decorators.vary import vary_on_headers
 def root(request):
 	context = RequestContext(request)
 	context_dict = {}
-	'''
-        if request.method == 'POST':
-		from_address = request.POST['email']
-		name = request.POST['name']
-		message = request.POST['message']
-		message = "From: " + name + " " + email + "\n" + message
-		send_mail('Contact Request', message, from_address, ['monadnockvapor@gmail.com'])
-		return render_to_response('index2.html', context_dict, context)
-	else:
-        '''
-	index_mosiac = IndexMosiac.objects.all()[0]
+	
+        index_mosiac = IndexMosiac.objects.all()[0]
 	field_names = sorted(index_mosiac._meta.get_all_field_names())
-	images = []
+	imgobj = []
 	for f in field_names:
 		if f.find('id') == -1 & f.find('name')==-1:
-			print f, getattr(index_mosiac, f).image
-			images.append((getattr(index_mosiac, f).image, getattr(index_mosiac, f).caption))
+			imgobj.append(getattr(index_mosiac, f))
+	
+	for i in range(len(imgobj)):
+		if i+1%3 == 0:
+			imgobj[i].num = True
 
-	context_dict['images'] = images
-	return render_to_response('index2.html', context_dict, context)
+
+	context_dict['imgobj'] = imgobj
+	return render_to_response('index.html', context_dict, context)
 
 def mosiac(request):
 	context = RequestContext(request)

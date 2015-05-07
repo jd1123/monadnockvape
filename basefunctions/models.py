@@ -5,13 +5,15 @@ from django.contrib import admin
 class IndexImage(models.Model):
     image_name = models.CharField(max_length = 40)
     image = models.ImageField(upload_to = "static/user_data/")
+    image_hires = models.ImageField(upload_to = "static/user_data/")
+    title = models.CharField(max_length = 140)
     caption = models.CharField(max_length = 140)
 
     def __unicode__(self):
         return self.caption
 
 class IndexImageAdmin(admin.ModelAdmin):
-    list_display = ['image', 'caption']
+    list_display = ['image_name', 'title', 'caption']
 
 
 class IndexMosiac(models.Model):

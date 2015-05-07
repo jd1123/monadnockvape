@@ -5,10 +5,12 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
+from django.views.decorators.vary import vary_on_headers
 # Create your views here.
 
 
 # Home page
+@vary_on_headers('User-Agent')
 def root(request):
 	context = RequestContext(request)
 	context_dict = {}

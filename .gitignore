@@ -7,3 +7,5 @@ inventory/migrations/*
 jp.csv
 *.swo
 user_data
+mosimg
+startgunicorn

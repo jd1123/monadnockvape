@@ -4,8 +4,8 @@ from django.contrib import admin
 # Create your models here.
 class IndexImage(models.Model):
     image_name = models.CharField(max_length = 40)
-    image = models.ImageField(upload_to = "static/user_data/")
-    image_hires = models.ImageField(upload_to = "static/user_data/")
+    image = models.ImageField(upload_to = "static/mosimg/")
+    image_hires = models.ImageField(upload_to = "static/mosimg/")
     title = models.CharField(max_length = 140)
     caption = models.CharField(max_length = 140)
 

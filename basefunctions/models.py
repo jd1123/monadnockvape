@@ -10,14 +10,14 @@ class IndexImage(models.Model):
     caption = models.CharField(max_length = 140)
 
     def __unicode__(self):
-        return self.caption
+        return self.image_name
 
 class IndexImageAdmin(admin.ModelAdmin):
     list_display = ['image_name', 'title', 'caption']
 
 
 class IndexMosiac(models.Model):
-    mosiac_name = models.CharField(max_length = 50, default="my_mosiac")
+    mosiac_name = models.CharField(max_length = 50, default="frontpage_mosiac")
     image1 = models.ForeignKey(IndexImage, related_name='image1')
     image2 = models.ForeignKey(IndexImage, related_name='image2')
     image3 = models.ForeignKey(IndexImage, related_name='image3')

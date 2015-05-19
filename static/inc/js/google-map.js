@@ -1,6 +1,6 @@
 var primaryColor = "#6C7A89";
-var myLatlng = new google.maps.LatLng(42.935324, -72.277906);
-var myLatlng2 = new google.maps.LatLng(43.6347987, -72.3156816);
+var myLatlng = new google.maps.LatLng(43.6347987, -72.3156816);
+var myLatlng2 = new google.maps.LatLng(42.935324, -72.277906);
 var map,map2;
 
 function initialize() {
@@ -109,9 +109,9 @@ function initialize() {
 		strokeWeight: 1
 	};
 
-	var contentString = '<div id="map-info-window">' + '<h1><a href="https://goo.gl/maps/xiSGp" target="_blank">Monadnock Vapor</a></h1><p>34 1/2 Washington St.</p><p>Keene, NH		03431</p><p><a href="https://goo.gl/maps/xiSGp" target="_blank">View on Google maps<a></p>' + '</div>';
+	var contentString = '<div id="map-info-window">' + '<h1><a href="https://goo.gl/maps/xiSGp" target="_blank">Monadnock Vapor</a></h1><p>1 Glenn Road Plaza</p><p>New Lebanon, NH		03784</p><p><a href="https://goo.gl/maps/xiSGp" target="_blank">View on Google maps<a></p>' + '</div>';
+	var contentString2 = '<div id="map-info-window">' + '<h1><a href="https://goo.gl/maps/xiSGp" target="_blank">Monadnock Vapor</a></h1><p>34 1/2 Washington St.</p><p>Keene, NH		03431</p><p><a href="https://goo.gl/maps/xiSGp" target="_blank">View on Google maps<a></p>' + '</div>';
 
-	var contentString2 = '<div id="map-info-window">' + '<h1><a href="https://goo.gl/maps/xiSGp" target="_blank">Monadnock Vapor</a></h1><p>1 Glenn Road Plaza</p><p>New Lebanon, NH		03784</p><p><a href="https://goo.gl/maps/xiSGp" target="_blank">View on Google maps<a></p>' + '</div>';
 	
 	var infowindow = new google.maps.InfoWindow({//.gm-style-iw + div {display: none} to hide X (only if you disable other info windows!
 		content: contentString

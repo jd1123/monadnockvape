@@ -24,8 +24,9 @@ def root(request):
 			imgobj.append(getattr(index_mosiac, f))
 	
 	for i in range(len(imgobj)):
-		if i+1%3 == 0:
-			imgobj[i].num = True
+		imgobj[i].num = i + 1
+                if (i+1)%3 == 0:
+			imgobj[i].br = True
 
 
 	context_dict['imgobj'] = imgobj

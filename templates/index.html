@@ -130,19 +130,19 @@
 						<figure>
 							<img src="{{ i.image }}">
 							<figcaption>
-								<a href="{{ i.image_hires  }}" class="image-gallery-link" data-lightbox="image-{{i.num}}" data-title="{{ images.0.1 }}">
+							<a href="{{ i.image_hires  }}" class="image-gallery-link" data-lightbox="image-{{i.num}}" data-title="{{ i.caption }}">
 									<i class="fa fa-search-plus fa-3x"></i>
-									<p>{{ images.0.1 }}</p>
+									<p>{{ i.title }}</p>
 								</a>	
 							</figcaption>
 						</figure>
 					</li>
-						{% if i.num %}
+		{% if i.br %}
 				</ul>
 			</div>
 			<div class="image-row">
 				<ul id="image-gallery" class="cf">
-					{% endif %}
+		{% endif %}
 				{% endfor %}
 				</ul>
 			</div>
@@ -185,15 +185,15 @@
 					<h2>LOCATIONS</h2>
 					<div class="tab-container">
 						<ul class="cf">
-							<li><a class="current tab1-input">Keene</a></li><!--
-							--><li><a class="tab2-input">West Lebanon</a></li>
+							<li><a class="current tab1-input">West Lebanon</a></li><!--
+							--><li><a class="tab2-input">Keene</a></li>
 						</ul>
 					</div>
 					<div class="tab1-content">
 						<div class="left">
 							<i class="fa fa-map-marker fa-2x"></i>
-							<p>34 1/2 Washington Street</p>
-							<p>Keene, NH 03431</p>
+							<p>1 Glenn Road Plaza, Suite 19</p>
+							<p>West Lebanon, NH 03784</p>
 						</div>
 						<div class="right">
 							<i class="fa fa-clock-o fa-2x"></i>
@@ -204,8 +204,8 @@
 					<div class="tab2-content">
 						<div class="left">
 							<i class="fa fa-map-marker fa-2x"></i>
-							<p>1 Glenn Road Plaza, Suite 19</p>
-							<p>West Lebanon, NH 03784</p>
+							<p>34 1/2 Washington Street</p>
+							<p>Keene, NH 03431</p>
 						</div>
 						<div class="right">
 							<i class="fa fa-clock-o fa-2x"></i>
